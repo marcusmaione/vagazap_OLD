@@ -3,4 +3,10 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def profile
+    @user = current_user
+    @companies = @user.companies
+    @favorites = @user.favorites
+  end
 end

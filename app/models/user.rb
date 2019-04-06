@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :experiences, :dependent => :destroy
   has_many :companies, :dependent => :destroy
   has_many :favorites, :dependent => :destroy
+  mount_uploader :avatar, AvatarUploader
 end
