@@ -1,0 +1,45 @@
+.main-content.home {
+  min-height: 60vh;
+}
+
+.unordered-list {
+  padding-inline-start: 0px;
+  list-style: none;
+}
+
+.left-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 12px 0px;
+}
+
+.icon-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+
+  border-radius: 50%;
+  padding: 10px;
+  width: 36px;
+  height: 36px;
+
+  &:before {
+    color: white;
+  }
+
+  &.fa-smile {
+    background-color: #ED6A5A;
+    font-size: 30px;
+  }
+  &.fa-search {
+    background-color: #F7B267;
+  }
+  &.fa-recycle {
+    background-color: #508991;
+  }
+  &.fa-dollar-sign {
+    background-color: #9AC4F8;
+  }
+}
