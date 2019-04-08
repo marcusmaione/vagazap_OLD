@@ -2,9 +2,6 @@
 
   <div class="nav-left">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "bridge logo.png" %>
-    <% end %>
-    <%= link_to root_path, class: "navbar-brand" do %>
       <h5>Pontful</h5>
     <% end %>
   </div>
@@ -41,10 +38,10 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
+        <li class="navbutton">
           <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
+        <li class="navbutton">
           <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
         </li>
       <% end %>
