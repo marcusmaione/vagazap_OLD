@@ -1,6 +1,6 @@
 .footer {
   display: flex;
-  background-color: #113F67;
+  background-color: #495867;
   height: 50px;
   justify-content: center;
   width: 100%;
@@ -8,8 +8,16 @@
   color: white;
  }
 
+@media (min-width: 750px) {
+  .footer {
+    height: 64px;
+  }
+}
+
 .footer-links {
+  display: flex;
   font-size:28px;
+  align-items: center;
 }
 
 .footer-links a {

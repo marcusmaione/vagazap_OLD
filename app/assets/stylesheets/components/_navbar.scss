@@ -1,8 +1,20 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #113F67;
+  background: #495867;
   height: 50px;
+  width: 100%;
   margin-bottom: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 750px) {
+  .navbar-lewagon {
+    height: 64px;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -23,8 +35,8 @@
 .navbar-brand {
   margin-right: 0px;
   padding: 0px;
-  height: 30px;
-  vertical-align: center;
+  height: 40px;
+  // vertical-align: center;
   display: flex;
   align-items: center;
   color: white !important;
@@ -33,7 +45,7 @@
     font-family: $logo-font;
     font-weight: 700;
     margin-bottom: 0px;
-    margin-left: 5px;
+    font-size: 28px;
   }
 }
 
@@ -44,4 +56,33 @@
 .navbar-light .navbar-nav .nav-link:hover {
   color: white !important;
   opacity: 0.6;
+}
+
+.navbutton {
+  display: inline-block;
+  font-weight: 400;
+  color: #0E0000;
+  text-align: center;
+  vertical-align: middle;
+  // -webkit-user-select: none;
+  // -moz-user-select: none;
+  // -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 4px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 2px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: white;
+  text-decoration: none;
+  background-color: #E84855;
+  border-color: #E84855;
+  margin: 0px 10px;
+  font-family: "Roboto";
+}
+
+.nav-link {
+  padding: 0px;
 }

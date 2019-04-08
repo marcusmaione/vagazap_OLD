@@ -27,8 +27,8 @@ $border-radius-sm: 2px;
 .btn-primary {
   color: white !important;
   text-decoration: none !important;
-  background-color: #113F67 !important;
-  border-color: #113F67 !important;
+  background-color: #E84855 !important;
+  border-color: #E84855 !important;
   margin: 10px !important;
   font-family: "Roboto" !important;
 }
@@ -39,6 +39,7 @@ $border-radius-sm: 2px;
 
 .btn:active {
   opacity: 0.5 !important;
+  top: 1px;
 }
 
 .form-inputs {
