@@ -1,2 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.5) 0%, rgba(0,36,61,0.5) 50%), url('<%= image_path "banner-portrait.jpg" %>');">
+  <div>
+    <h4>Seu próximo emprego</h4>
+    <h4>na palma da sua mão</h4>
+  </div>
+  <%= link_to 'Como funciona', '#how', class: "btn btn-outline-light" %>
+</div>

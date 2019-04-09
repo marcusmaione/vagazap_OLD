@@ -30,14 +30,14 @@ $border-radius-sm: 2px;
   background-color: #E84855 !important;
   border-color: #E84855 !important;
   margin: 10px !important;
-  font-family: "Roboto" !important;
+  position: relative;
 }
 
-.btn:hover {
+.btn-primary:hover {
   opacity: 0.7 !important;
 }
 
-.btn:active {
+.btn-primary:active {
   opacity: 0.5 !important;
   top: 2px;
 }
@@ -75,9 +75,4 @@ p {
 
 body {
   background-color: rgb(245,245,245) !important;
-}
-
-.how {
-  position: absolute;
-  bottom: 16px;
 }
