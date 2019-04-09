@@ -7,3 +7,30 @@
     min-height: calc(100vh - 128px);
   }
 }
+
+#how {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 20px;
+}
+
+.how-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.how-box {
+  max-width: 300px;
+  text-align: center;
+}
+
+.how-picture {
+  max-width: 300px;
+  text-align: center;
+}
