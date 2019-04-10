@@ -8,15 +8,17 @@
   }
 }
 
-.steps-container {
-  margin: 56px auto 56px auto;
-  padding: 0 24px;
-}
 
 @media (min-width: 576px) {
   .steps-container {
     padding: 0 15px;
+    margin: 0px auto 0px auto;
   }
+}
+
+.steps-container {
+  margin: 0px auto 0px auto;
+  padding: 0 24px;
 }
 
 .steps {
@@ -33,7 +35,7 @@
 
 .steps-text {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 70px;
 }
 
 .steps-item {
