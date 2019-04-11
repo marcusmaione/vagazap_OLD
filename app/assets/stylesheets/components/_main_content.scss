@@ -11,22 +11,14 @@
 .steps-container {
   margin: 0px auto 30px auto;
   padding: 30px 24px 0px 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 992px) {
   .steps-container {
     padding: 0 15px;
     margin: 56px auto 56px auto;
-  }
-}
-
-.steps {
-  display: flex;
-  flex-direction: column;
-}
-
-@media (min-width: 992px) {
-  .steps {
     flex-direction: row;
     justify-content: center;
   }
@@ -66,6 +58,7 @@
   vertical-align: middle;
   border-style: none;
   width: 100%;
+  border-radius: 5px;
 }
 
 @media (min-width: 992px) {
@@ -81,3 +74,96 @@
     margin-bottom: 0;
   }
 }
+
+.free-start {
+  margin: 60px auto 30px auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.features-container {
+  background-color: rgb(245,245,245);
+  margin: 0px auto 30px auto;
+  padding: 0px 24px;
+}
+
+@media (min-width: 992px) {
+  .features-container {
+    padding: 0 30px;
+    margin: 56px auto 56px auto;
+  }
+}
+
+.features-cards {
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .features-cards {
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 20px;
+    align-items: stretch;
+  }
+}
+
+.features-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fa-user-check {
+  color: #BDD5EA;
+  font-size: 40px;
+  top: 50px;
+}
+
+.fa-map-marked-alt {
+  color: #BDD5EA;
+  font-size: 40px;
+  top: 50px;
+}
+
+.fa-address-card {
+  color: #BDD5EA;
+  font-size: 40px;
+  top: 50px;
+}
+
+.features-card {
+  background-color: #495867;
+  text-align: center;
+  color: rgb(245,245,245);
+  text-align: center;
+  vertical-align: middle;
+  padding: 20px 10px;
+  margin: 20px 10px;
+  border-radius: 5px;
+}
+
+@media (min-width: 992px) {
+  .features-card {
+    vertical-align: top;
+    min-height: 192px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .features-card {
+    min-height: 170px;
+  }
+}
+
+.features-card h5 {
+  font-weight: 700;
+}
+
+.features-card p {
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+
