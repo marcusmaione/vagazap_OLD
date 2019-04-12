@@ -3,11 +3,11 @@
 
     <%- if devise_mapping.omniauthable? %>
       <%- resource_class.omniauth_providers.each do |provider| %>
-        <%= link_to icon('fab', 'facebook') + " Entrar com o #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: "btn btn-primary btn-facebook" %>
+        <%= link_to icon('fab', 'facebook') + " Continuar com #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: "btn btn-primary btn-facebook" %>
       <% end %>
     <% end %>
 
-    <h5>Entrar com seu e-mail:</h5>
+    <h5>Continuar com e-mail:</h5>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
@@ -22,11 +22,11 @@
                     required: true,
                     hint: ("#{@minimum_password_length} caracteres no mínimo" if @minimum_password_length),
                     input_html: { autocomplete: "new-password" },
-                    :label => "Senha:" %>
+                    :label => "Criar uma senha:" %>
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password" },
-                    :label => "Confirme a senha:" %>
+                    :label => "Confirmar a senha:" %>
         <%= f.input :first_name,
                     :label => "Nome:" %>
         <%= f.input :last_name,
@@ -34,7 +34,7 @@
         <%= f.input :phone,
                     hint: "Incluir DDD. Exemplo: (21)99999-9999",
                     :label => "Celular:" %>
-        <%= f.input :avatar, :label => "Inclua uma foto de perfil:" %>
+        <%= f.input :avatar, :label => "Incluir uma foto de perfil:" %>
         <%= f.input :avatar_cache, as: :hidden %>
       </div>
 
@@ -42,6 +42,11 @@
         <%= f.submit class: 'btn btn-primary', value: "Entrar" %>
       </div>
     <% end %>
+
+    <div class="login-signup">
+      <p>Já é cadastrado?</p>
+      <%= link_to "Entrar.", new_user_session_path %>
+    </div>
 
   </div>
 </div>
