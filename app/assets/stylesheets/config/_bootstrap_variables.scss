@@ -24,28 +24,6 @@ $border-radius-sm: 2px;
 
 // Override other variables below!
 
-.btn-primary {
-  color: white !important;
-  text-decoration: none !important;
-  background-color: #E84855 !important;
-  border-color: #E84855 !important;
-  margin: 10px !important;
-  position: relative;
-}
-
-.btn-primary:hover {
-  opacity: 0.7 !important;
-}
-
-.btn-primary:active {
-  opacity: 0.5 !important;
-  top: 2px;
-}
-
-.form-inputs {
-  min-width: 296px;
-}
-
 body {
   background-color: rgb(245,245,245) !important;
 }
