@@ -8,8 +8,33 @@
 
 .form-box h5 {
   margin: 20px 0px;
+  color: #495867;
+  font-weight: 700;
+}
+
+.form-box label {
+  color: #495867;
+  font-weight: 500;
 }
 
 .form-inputs {
   min-width: 296px;
+}
+
+.login-signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.login-signup p {
+  margin: 20px 0px 0px 0px;
+  color: #495867;
+  font-weight: 500;
+}
+
+.login-signup a {
+  font-weight: 500;
 }
