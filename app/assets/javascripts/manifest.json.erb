@@ -1,0 +1,17 @@
+<% icon_sizes = Rails.configuration.serviceworker.icon_sizes %>
+{
+  "name": "Pontful",
+  "short_name": "Pontful",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "<%= image_path "square bridge.png" %>",
+      "sizes": "640x640",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#BDD5EA",
+  "background_color": "#BDD5EA",
+  "display": "fullscreen",
+  "orientation": "portrait"
+}
