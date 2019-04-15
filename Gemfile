@@ -18,6 +18,7 @@ gem 'webpacker', '3.5.5'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'omniauth-facebook'
+gem 'serviceworker-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
