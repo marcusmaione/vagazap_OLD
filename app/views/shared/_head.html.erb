@@ -1,0 +1,17 @@
+<%# Apple tags %>
+  <%= tag.meta(name: 'apple-mobile-web-app-status-bar-style', content: 'black') %>
+  <%= tag.meta(name: 'apple-mobile-web-app-capable', content: 'yes') %>
+  <%= tag.meta(name: 'apple-mobile-web-app-title', content: 'Pontful') %>
+<%# Icons %>
+  <%= tag.link(rel: 'manifest', href: asset_path('manifest.json')) %>
+  <%= tag.link(rel: 'apple-touch-icon', href: asset_path('square-bridge.png')) %>
+  <%= tag.link(rel: 'apple-touch-icon', sizes: '152x152', href: asset_path('square-bridge.png')) %>
+  <%= tag.link(rel: 'apple-touch-icon', sizes: '180x180', href: asset_path('square-bridge.png')) %>
+  <%= tag.link(rel: 'apple-touch-icon', sizes: '192x192', href: asset_path('square-bridge.png')) %>
+<%# Splashes (NOT BEEN USED, BUT KEPT FOR FUTURE REFERENCE) %>
+  <%#= tag.link(rel: "apple-touch-startup-image", href: asset_path('temp-background.jpg' ), media: "(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 1) and (orientation: portrait)") %>
+  <%#= tag.link(rel: "apple-touch-startup-image", href: asset_path('temp-background.jpg' ), media: "(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)") %>
+  <%= tag.link(rel: "apple-touch-startup-image", href: asset_path('square-bridge.png'), media: "(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)") %>
+  <%#= tag.link(rel: "apple-touch-startup-image", href: asset_path('temp-background.jpg'), media: "(min-device-width: 768px) and (max-device-width: 1004px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)") %>
+  <%#= tag.link(rel: "apple-touch-startup-image", href: asset_path('temp-background.jpg'), media: "(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)") %>
+  <%#= tag.link(rel: "apple-touch-startup-image", href: asset_path('temp-background.jpg'), media: "(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)")   %>
