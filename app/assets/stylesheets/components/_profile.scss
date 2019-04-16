@@ -1,0 +1,36 @@
+.profile-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.profile-box h5 {
+  margin: 20px 0px;
+  color: #495867;
+  font-weight: 700;
+}
+
+.profile-box p {
+  color: #495867;
+  font-weight: 500;
+}
+
+.edit-or-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.edit-or-search p {
+  margin: 20px 0px 0px 0px;
+  color: #495867;
+  font-weight: 500;
+}
+
+.edit-or-search a {
+  font-weight: 500;
+}
