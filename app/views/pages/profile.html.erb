@@ -5,7 +5,7 @@
     <% if @user.degrees.empty? || @user.experiences.empty? %>
 
   <!-- call to action (botao) para completar perfil  -->
-      <p>Complete seu perfil. Perfis completos têm mais chances de serem escolhidos pelas empresas.</p>
+      <p> Dica: Perfis completos têm melhores chances de conseguir uma vaga.</p>
       <%= link_to "Completar perfil", new_degree_path, class: "btn btn-primary" %>
       <!-- mudar path do botao para new degree, que quando terminar vai pra new experience e depois new course -->
 
@@ -19,13 +19,7 @@
     <% end %>
 
   <!-- lista o perfil todo rendering cada item como no profile page do deplastify-->
-    <% @degrees.each do |degree| %>
-      <h2><%= degree.level %></h2>
-      <p><%= degree.school_name %></p>
-      <p><%= degree.field %></p>
-      <p><%= degree.complete %></p>
-      <br>
-    <% end %>
+      <%= render 'user-degrees', degrees: @degrees %>
 
   <!-- link para editar perfil -->
 

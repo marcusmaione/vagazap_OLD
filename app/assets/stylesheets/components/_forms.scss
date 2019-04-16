@@ -1,9 +1,24 @@
+.simple_form {
+  width: 100%;
+}
+
+.form-actions {
+  text-align: center;
+}
+
 .form-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 0px;
+  padding: 0px 0px 20px 0px;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .form-box {
+    padding: 20px 0px;
+  }
 }
 
 .form-box h5 {
@@ -12,29 +27,13 @@
   font-weight: 700;
 }
 
+.form-box p {
+  margin: 40px 0px 0px 0px;
+  color: #495867;
+  font-weight: 500;
+}
+
 .form-box label {
   color: #495867;
-  font-weight: 500;
-}
-
-.form-inputs {
-  min-width: 296px;
-}
-
-.login-signup {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 10px;
-}
-
-.login-signup p {
-  margin: 20px 0px 0px 0px;
-  color: #495867;
-  font-weight: 500;
-}
-
-.login-signup a {
   font-weight: 500;
 }

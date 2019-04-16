@@ -1,0 +1,17 @@
+<h5>Experiência profissional:</h5>
+
+<div class="degrees-box">
+  <% @experiences.each do |experience| %>
+    <div class="degree-box">
+      <p><%= experience.company_name + " (" + experience.company_sector + ")" %></p>
+      <p><%=  experience.field if experience.field.nil? == false %></p>
+      <% if experience.complete == "1" %>
+        <p>Completo</p>
+      <% else %>
+        <p>Incompleto</p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Incluir diploma", new_experience_path, class: "btn btn-secondary" %>

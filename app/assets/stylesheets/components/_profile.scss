@@ -17,20 +17,24 @@
   font-weight: 500;
 }
 
-.edit-or-search {
+.degrees-box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 10px;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 0px 0px 0px 0px;
+
 }
 
-.edit-or-search p {
-  margin: 20px 0px 0px 0px;
-  color: #495867;
-  font-weight: 500;
+.degree-box {
+  background-color: white;
+  padding: 0px 10px 10px 10px;
+  margin: 0px 10px 20px 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  justify-content: space-around;
+  opacity: 1;
 }
 
-.edit-or-search a {
-  font-weight: 500;
+.degree-box p {
+  margin: 10px 0px 0px 0px;
 }
