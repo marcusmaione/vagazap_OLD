@@ -3,14 +3,13 @@
 
     <%- if devise_mapping.omniauthable? %>
       <%- resource_class.omniauth_providers.each do |provider| %>
-        <%= link_to icon('fab', 'facebook') + " Entrar com o #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: "btn btn-primary btn-facebook" %>
+        <%= link_to icon('fab', 'facebook') + " Entrar com #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: "btn btn-primary btn-facebook" %>
       <% end %>
     <% end %>
 
     <h5>Entrar com seu e-mail:</h5>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
         <%= f.input :email,
                     required: true,
                     autofocus: true,
@@ -21,18 +20,15 @@
                     input_html: { autocomplete: "current-password" },
                     :label => "Senha:" %>
         <%= f.input :remember_me, as: :boolean, :label => "Lembrar de mim" if devise_mapping.rememberable? %>
-      </div>
 
-      <div class="form-actions" style="text-align: center">
+      <div class="form-actions">
         <%= f.submit class: 'btn btn-primary', value: "Entrar" %>
       </div>
     <% end %>
 
-    <div class="login-signup">
       <%= link_to "Esqueceu sua senha?", new_password_path(resource_name) %>
       <p>Ainda não tem conta?</p>
-      <%= link_to "Cadastre-se!", new_user_registration_path %>
-    </div>
+      <%= link_to "Cadastrar", new_user_registration_path, class: 'btn btn-secondary' %>
 
   </div>
 </div>

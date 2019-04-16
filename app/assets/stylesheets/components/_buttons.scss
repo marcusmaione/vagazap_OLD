@@ -38,7 +38,26 @@
   top: 2px;
 }
 
+.btn-secondary {
+  color: white !important;
+  text-decoration: none !important;
+  background-color: #577399 !important;
+  border-color: #577399 !important;
+  margin: 10px !important;
+  position: relative;
+}
+
+.btn-secondary:hover {
+  opacity: 0.7 !important;
+}
+
+.btn-secondary:active {
+  opacity: 0.5 !important;
+  top: 2px;
+}
+
 .btn-facebook {
   background-color: #3B5998 !important;
   border-color: #3B5998 !important;
+  margin-top: 30px !important;
 }
