@@ -6,6 +6,9 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
+    @degrees = @user.degrees
+    @courses = @user.courses
+    @experiences = @user.experiences
     @companies = @user.companies
     @favorites = @user.favorites
   end
