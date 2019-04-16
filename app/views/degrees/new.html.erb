@@ -1,1 +1,19 @@
-new.html.erb
+     <h1>Diploma</h1>
+
+        <%= simple_form_for(@degree) do |f| %>
+
+          <%= f.input :level, collection: Degree::DEGREELEVELS, :label => "Nível de escolaridade:" %>
+          <%= f.input :school_name, :label => "Nome da escola/instituição" %>
+          <%= f.input :field, hint: "Apenas para Ensino Superior", :label => "Curso:" %>
+          <%= f.input :complete, as: :boolean, :label => "Completo?" %>
+
+          <div style="text-align: center">
+          <%= f.submit class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+      <br>
+      <p>Você pode adicionar mais diplomas depois.</p>
+      <div style="text-align: center">
+      <%= link_to "Voltar" , profile_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
