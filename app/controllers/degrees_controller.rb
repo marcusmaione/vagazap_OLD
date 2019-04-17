@@ -18,7 +18,11 @@ class DegreesController < ApplicationController
     @degree = Degree.new(degree_params)
     @degree.user = current_user
     if @degree.save
-      redirect_to profile_path
+      if current_user.degrees.count == 1
+        redirect_to new_experience_path
+      else
+        redirect_to profile_path
+      end
     else
       render :new
     end

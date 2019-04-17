@@ -5,7 +5,7 @@
 
    <%= simple_form_for(@degree) do |f| %>
      <%= f.input :level, collection: Degree::DEGREELEVELS, :label => "Nível de escolaridade:" %>
-     <%= f.input :school_name, :label => "Nome da escola/instituição" %>
+     <%= f.input :school_name, :label => "Nome da escola/instituição:" %>
      <%= f.input :field, hint: "Apenas para Ensino Superior", :label => "Curso:" %>
      <%= f.input :complete, as: :boolean, :label => "Completo?" %>
 
@@ -15,7 +15,6 @@
    <% end %>
 
    <p>Você pode incluir mais diplomas depois se quiser.</p>
-   <%= link_to "Voltar" , profile_path, class: 'btn btn-secondary' %>
 
   </div>
 </div>

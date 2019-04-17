@@ -1,27 +1,17 @@
 <div class="container col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
   <div class="profile-box">
 
-  <!-- If user.degrees.nil? ou user.experiences.nil? -->
     <% if @user.degrees.empty? || @user.experiences.empty? %>
-
-  <!-- call to action (botao) para completar perfil  -->
-      <p> Dica: Perfis completos têm melhores chances de conseguir uma vaga.</p>
+      <p><strong> Dica:</strong> Perfis completos têm melhores chances de conseguir uma vaga.</p>
       <%= link_to "Completar perfil", new_degree_path, class: "btn btn-primary" %>
-      <!-- mudar path do botao para new degree, que quando terminar vai pra new experience e depois new course -->
-
-  <!-- else -->
     <% else %>
-
-  <!-- call to action para ver as vagas proximas (botao vermelho)-->
       <%= link_to "Começar", root_path, class: "btn btn-primary" %>
-
-  <!-- end -->
-    <% end %>
-
-  <!-- lista o perfil todo rendering cada item como no profile page do deplastify-->
+      <%= render 'user-details' %>
       <%= render 'user-degrees', degrees: @degrees %>
 
-  <!-- link para editar perfil -->
+    <% end %>
+
+
 
 
   </div>
