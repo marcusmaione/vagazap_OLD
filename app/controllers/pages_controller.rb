@@ -12,4 +12,8 @@ class PagesController < ApplicationController
     @companies = @user.companies
     @favorites = @user.favorites
   end
+
+  def register_details
+    @user = current_user
+  end
 end

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'profile', to: 'pages#profile'
+  get 'register_details', to: 'pages#register_details'
   # Generic syntax:
   # verb 'path', to: 'controller#action', as: :route_name
   resources :degrees
+  resources :experiences
 end

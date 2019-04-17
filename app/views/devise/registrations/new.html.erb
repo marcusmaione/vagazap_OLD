@@ -19,22 +19,13 @@
                     :label => "E-mail:" %>
         <%= f.input :password,
                     required: true,
-                    hint: ("#{@minimum_password_length} caracteres no mínimo" if @minimum_password_length),
+                    hint: ("No mínimo #{@minimum_password_length} caracteres" if @minimum_password_length),
                     input_html: { autocomplete: "new-password" },
                     :label => "Criar uma senha:" %>
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password" },
                     :label => "Confirmar a senha:" %>
-        <%= f.input :first_name,
-                    :label => "Nome:" %>
-        <%= f.input :last_name,
-                    :label => "Sobrenome:" %>
-        <%= f.input :phone,
-                    hint: "Incluir DDD. Exemplo: (21)99999-9999",
-                    :label => "Celular:" %>
-        <%= f.input :avatar, :label => "Incluir uma foto de perfil:" %>
-        <%= f.input :avatar_cache, as: :hidden %>
 
       <div class="form-actions">
         <%= f.submit class: 'btn btn-primary', value: "Confirmar" %>
