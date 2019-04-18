@@ -1,43 +1,51 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div class="form-box">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+    <h5>Informações pessoais:</h5>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :first_name, required: true %>
-    <%= f.input :last_name, required: true %>
-    <%= f.input :phone, required: true %>
-    <%= f.input :avatar %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Aguardando confirmação para: <%= resource.unconfirmed_email %></p>
+      <% end %>
+
+        <%= f.input :first_name,
+                    required: true,
+                    :label => "Nome:" %>
+        <%= f.input :last_name,
+                    required: true,
+                    :label => "Sobrenome:" %>
+        <%= f.input :phone,
+                    required: true,
+                    hint: "Incluir DDD. Exemplo: (21)99999-9999",
+                    :label => "Celular:" %>
+        <%= f.input :avatar, :label => "Incluir uma foto de perfil:" %>
+        <%= f.input :avatar_cache, as: :hidden %>
+
+
+        <%= f.input :password,
+                    hint: "Deixe em branco se não quiser alterar",
+                    required: false,
+                    :label => "Nova senha:",
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    hint: "Deixe em branco se não quiser alterar",
+                    required: false,
+                    :label => "Confirmar nova senha:",
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :current_password,
+                    hint: "Senha atual para confirmar as alterações",
+                    required: true,
+                    :label => "Senha atual:",
+                    input_html: { autocomplete: "current-password" } %>
+
+      <div class="form-actions">
+        <%= f.submit class: 'btn btn-primary', value: "Confirmar" %>
+      </div>
     <% end %>
 
-    <%= f.input :password,
-                hint: "Deixe em branco se não quiser alterar",
-                required: false,
-                :label => "Nova senha:",
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                hint: "Deixe em branco se não quiser alterar",
-                required: false,
-                :label => "Confirmar nova senha:",
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "Senha atual para confirmar as alterações",
-                required: true,
-                :label => "Senha atual:",
-                input_html: { autocomplete: "current-password" } %>
+    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>

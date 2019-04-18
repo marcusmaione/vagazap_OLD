@@ -4,14 +4,11 @@
   <% @experiences.each do |experience| %>
     <div class="degree-box">
       <p><%= experience.company_name + " (" + experience.company_sector + ")" %></p>
-      <p><%=  experience.field if experience.field.nil? == false %></p>
-      <% if experience.complete == "1" %>
-        <p>Completo</p>
-      <% else %>
-        <p>Incompleto</p>
-      <% end %>
+      <p><%= experience.title + " " + experience.level + " (" + experience.sector + ")" %></p>
+      <p><%= experience.description %></p>
+      <p><%= experience.start_date %> - <%= experience.end_date %></p>
     </div>
   <% end %>
 </div>
 
-<%= link_to "Incluir diploma", new_experience_path, class: "btn btn-secondary" %>
+<%= link_to "Incluir experiência", new_experience_path, class: "btn btn-secondary" %>
