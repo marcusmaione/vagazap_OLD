@@ -3,13 +3,14 @@
 <div class="degrees-box">
   <% @degrees.each do |degree| %>
     <div class="degree-box">
-      <p><%= degree.level + ": " + degree.school_name %></p>
-      <p><%=  degree.field if degree.field.nil? == false %></p>
-      <% if degree.complete == "1" %>
-        <p>Completo</p>
+      <p><%= degree.level %> <% if degree.complete == "1" %>
+        Completo
       <% else %>
-        <p>Incompleto</p>
+        Incompleto
       <% end %>
+      </p>
+      <p><%= degree.school_name %></p>
+      <p><%=  degree.field if degree.field.nil? == false %></p>
     </div>
   <% end %>
 </div>

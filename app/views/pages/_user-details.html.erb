@@ -1,1 +1,9 @@
-_user-details.html.erb
+<h5>Informações pessoais:</h5>
+
+<div class="degrees-box">
+  <div class="degree-box">
+    <p><%= current_user.first_name + " " + current_user.last_name %></p>
+    <p><%= current_user.email %></p>
+    <p><%= current_user.phone %></p>
+  </div>
+</div>
