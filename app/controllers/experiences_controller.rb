@@ -19,7 +19,7 @@ class ExperiencesController < ApplicationController
     @experience.user = current_user
     if @experience.save
       if current_user.experiences.count == 1
-        redirect_to profile_path
+        redirect_to new_course_path
       else
         redirect_to profile_path
       end

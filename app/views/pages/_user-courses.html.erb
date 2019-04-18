@@ -1,1 +1,17 @@
-user-courses.html.erb
+<h5>Cursos:</h5>
+
+<div class="degrees-box">
+  <% @courses.each do |course| %>
+    <div class="degree-box">
+      <p><%= course.category + ": " + course.school_name %></p>
+      <p><%=  course.description %></p>
+      <% if course.complete == "1" %>
+        <p>Completo</p>
+      <% else %>
+        <p>Incompleto</p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Incluir curso", new_course_path, class: "btn btn-secondary" %>
