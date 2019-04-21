@@ -42,15 +42,16 @@
 }
 
 .banner h5 {
+  font-size: 28px;
   color: white;
-  line-height: 0.8;
+  line-height: 1.2;
   text-align: center;
 }
 
 @media (min-width: 576px) {
   .banner h5 {
   font-size: 28px;
-  line-height: 1.0;
+  line-height: 1.5;
   }
 }
 
