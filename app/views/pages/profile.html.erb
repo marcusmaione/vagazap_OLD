@@ -1,9 +1,13 @@
 <div class="container col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
   <div class="profile-box">
 
-    <% if @user.degrees.empty? || @user.experiences.empty? %>
-      <p><strong> Dica:</strong> Perfis completos têm melhores chances de conseguir uma vaga.</p>
+    <% if @user.degrees.empty? && @user.companies.empty? %>
+      <p>Quero ver as vagas!</p>
       <%= link_to "Completar perfil", new_degree_path, class: "btn btn-primary" %>
+      <div class="separator">
+      </div>
+      <p>Quero contratar!</p>
+      <%= link_to "Cadastrar empresa", root_path, class: "btn btn-secondary" %>
     <% else %>
       <%= link_to "Começar", root_path, class: "btn btn-primary" %>
       <%= render 'user-details' %>
@@ -11,6 +15,8 @@
       <%= render 'user-experiences', experiences: @experiences %>
       <%= render 'user-courses', courses: @courses %>
     <% end %>
+
+    <p><%= link_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Tem certeza?" }, method: :delete %></p>
 
   </div>
 </div>

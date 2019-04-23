@@ -2,8 +2,12 @@
 
 <div class="degrees-box">
   <div class="degree-box">
-    <p><%= current_user.first_name + " " + current_user.last_name %></p>
-    <p><%= current_user.email %></p>
-    <p><%= current_user.phone %></p>
+    <% if current_user.first_name.nil? %>
+      <%= link_to "Completar perfil", edit_user_registration_path, class: "btn btn-primary" %>
+    <% else %>
+      <p><%= current_user.first_name + " " + current_user.last_name %></p>
+      <p><%= current_user.email %></p>
+      <p><%= current_user.phone %></p>
+    <% end %>
   </div>
 </div>
