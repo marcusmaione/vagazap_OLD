@@ -3,14 +3,10 @@
 <div class="degrees-box">
   <% @experiences.each do |experience| %>
     <div class="degree-box">
-      <% if @user.experiences.empty? %>
-        <%= link_to "Adicionar experiência", new_experience_path, class: "btn btn-primary" %>
-      <% else %>
-        <p><%= experience.company_name + " (" + experience.company_sector + ")" %></p>
-        <p><%= experience.title + " " + experience.level + " (" + experience.sector + ")" %></p>
-        <p><%= experience.description %></p>
-        <p><%= experience.start_date %> - <%= experience.end_date %></p>
-      <% end %>
+      <p>Empresa: <%= experience.company_name %> (<%= experience.company_sector %>)</p>
+      <p><%= experience.title + " " + experience.level + " (" + experience.sector + ")" %></p>
+      <p><%= experience.description %></p>
+      <p><%= experience.start_date %> - <%= experience.end_date %></p>
     </div>
   <% end %>
 </div>

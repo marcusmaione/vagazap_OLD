@@ -3,16 +3,12 @@
 <div class="degrees-box">
   <% @courses.each do |course| %>
     <div class="degree-box">
-      <% if @user.courses.empty? %>
-        <%= link_to "Adicionar curso", new_experience_path, class: "btn btn-primary" %>
+      <p><%= course.category %>: <%= course.school_name %></p>
+      <p>Descrição: <%=  course.description %></p>
+      <% if course.complete == "1" %>
+        <p>Completo</p>
       <% else %>
-        <p><%= course.category + ": " + course.school_name %></p>
-        <p><%=  course.description %></p>
-        <% if course.complete == "1" %>
-          <p>Completo</p>
-        <% else %>
-          <p>Incompleto</p>
-        <% end %>
+        <p>Incompleto</p>
       <% end %>
     </div>
   <% end %>
