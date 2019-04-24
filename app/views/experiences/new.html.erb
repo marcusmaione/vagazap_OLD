@@ -4,13 +4,13 @@
    <h5>Incluir experiência:</h5>
 
    <%= simple_form_for(@experience) do |f| %>
-     <%= f.input :company_name, :label => "Nome da empresa:" %>
-     <%= f.input :company_sector, collection: Company::COMPANYSECTORS, :label => "Setor da empresa:" %>
-     <%= f.input :level, collection: Experience::EXPERIENCELEVELS, :label => "Anos de experiência:" %>
-     <%= f.input :title, collection: Job::JOBPOSITIONS, :label => "Cargo:" %>
-     <%= f.input :sector, collection: Job::JOBSECTORS, :label => "Setor do cargo:" %>
+     <%= f.input :company_name, required: true, :label => "Nome da empresa:" %>
+     <%= f.input :company_sector, required: true, collection: Company::COMPANYSECTORS, :label => "Setor da empresa:" %>
+     <%= f.input :level, required: true, collection: Experience::EXPERIENCELEVELS, :label => "Anos de experiência:" %>
+     <%= f.input :title, required: true, collection: Job::JOBPOSITIONS, :label => "Cargo:" %>
+     <%= f.input :sector, required: true, collection: Job::JOBSECTORS, :label => "Setor do cargo:" %>
      <%= f.input :description, hint: "Breve descrição das atividades", :label => "Descrição:" %>
-     <%= f.input :start_date, :label => "Data de início" %>
+     <%= f.input :start_date, required: true, :label => "Data de início" %>
      <%= f.input :end_date, hint: "Deixe em branco se continua na empresa", :label => "Data de término" %>
       <!-- include logic if end_date blank = today -->
 
