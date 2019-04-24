@@ -3,19 +3,18 @@
 <div class="degrees-box">
   <% @degrees.each do |degree| %>
     <div class="degree-box">
-      <% if @user.degrees.empty? %>
-        <%= link_to "Adicionar diploma", new_degree_path, class: "btn btn-primary" %>
-      <% else %>
-        <p><%= degree.level %>
-          <% if degree.complete == "1" %>
-            Completo
-          <% else %>
-            Incompleto
-          <% end %>
-        </p>
-        <p><%= degree.school_name %></p>
-        <p><%=  degree.field if degree.field.nil? == false %></p>
-      <% end %>
+      <p><%= degree.level %>
+        <% if degree.complete == "1" %>
+          Completo
+        <% else %>
+          Incompleto
+        <% end %>
+      </p>
+      <p>Instituição: <%= degree.school_name %></p>
+        <% if degree.field.empty? %>
+        <% else %>
+         <p>Curso: <%= degree.field %></p>
+        <% end %>
     </div>
   <% end %>
 </div>
