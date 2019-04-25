@@ -4,9 +4,10 @@
   <% @experiences.each do |experience| %>
     <div class="degree-box">
       <p>Empresa: <%= experience.company_name %> (<%= experience.company_sector %>)</p>
-      <p><%= experience.title + " " + experience.level + " (" + experience.sector + ")" %></p>
-      <p><%= experience.description %></p>
-      <p><%= experience.start_date %> - <%= experience.end_date %></p>
+      <p>Cargo: <%= experience.title %></p>
+      <p>Área: <%= experience.sector %></p>
+      <p>Descrição: <%= experience.description %></p>
+      <p>Tempo na empresa: <%= experience.level %></p>
     </div>
   <% end %>
 </div>

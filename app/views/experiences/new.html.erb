@@ -10,9 +10,6 @@
      <%= f.input :title, required: true, collection: Job::JOBPOSITIONS, :label => "Cargo:" %>
      <%= f.input :sector, required: true, collection: Job::JOBSECTORS, :label => "Setor do cargo:" %>
      <%= f.input :description, hint: "Breve descrição das atividades", :label => "Descrição:" %>
-     <%= f.input :start_date, required: true, :label => "Data de início" %>
-     <%= f.input :end_date, hint: "Deixe em branco se continua na empresa", :label => "Data de término" %>
-      <!-- include logic if end_date blank = today -->
 
    <div class="form-actions">
      <%= f.submit class: 'btn btn-primary', value: "Incluir" %>

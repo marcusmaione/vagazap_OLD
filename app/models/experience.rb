@@ -1,4 +1,5 @@
 class Experience < ApplicationRecord
-  EXPERIENCELEVELS = ["1 ano ou menos", "até 3 anos", "até 5 anos", "mais de 5 anos"].freeze
+  EXPERIENCELEVELS = ["menos de 1 ano", "1 ano", "2 anos", "3 anos", "4 anos",
+                      "5 anos", "mais de 5 anos"].freeze
   belongs_to :user
 end
