@@ -1,0 +1,14 @@
+<h5>Empresas:</h5>
+
+<div class="degrees-box">
+  <% @companies.each do |company| %>
+    <div class="degree-box">
+      <p>Empresa: <%= company.name %> </p>
+      <p>Setor: <%= company.sector %></p>
+      <p>Endereço: <%= company.address %></p>
+      <p><i class="fas fa-phone"></i> <%= company.phone %></p>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Incluir empresa", new_company_path, class: "btn btn-secondary" %>
