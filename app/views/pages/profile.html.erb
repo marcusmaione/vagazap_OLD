@@ -7,13 +7,18 @@
       <div class="separator">
       </div>
       <p>Quero contratar!</p>
-      <%= link_to "Cadastrar empresa", root_path, class: "btn btn-secondary" %>
+      <%= link_to "Cadastrar empresa", new_company_path, class: "btn btn-secondary" %>
     <% else %>
       <%= link_to "Começar", root_path, class: "btn btn-primary" %>
       <%= render 'user-details' %>
-      <%= render 'user-degrees', degrees: @degrees %>
-      <%= render 'user-experiences', experiences: @experiences %>
-      <%= render 'user-courses', courses: @courses %>
+      <% if current_user.companies.count == 0 %>
+        <%= render 'user-details' %>
+        <%= render 'user-degrees', degrees: @degrees %>
+        <%= render 'user-experiences', experiences: @experiences %>
+        <%= render 'user-courses', courses: @courses %>
+      <% else %>
+        <%= render 'user-companies', companies: @companies %>
+      <% end %>
     <% end %>
 
   </div>

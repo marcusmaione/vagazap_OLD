@@ -4,8 +4,8 @@
    <h5>Incluir diploma:</h5>
 
    <%= simple_form_for(@degree) do |f| %>
-     <%= f.input :level, collection: Degree::DEGREELEVELS, :label => "Nível de escolaridade:" %>
-     <%= f.input :school_name, :label => "Nome da escola/instituição:" %>
+     <%= f.input :level, required: true, collection: Degree::DEGREELEVELS, :label => "Nível de escolaridade:" %>
+     <%= f.input :school_name, required: true, :label => "Nome da escola/instituição:" %>
      <%= f.input :field, hint: "Apenas para Ensino Superior", :label => "Curso:" %>
      <%= f.input :complete, as: :boolean, :label => "Completo?" %>
 
