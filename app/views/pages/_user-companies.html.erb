@@ -4,9 +4,25 @@
   <% @companies.each do |company| %>
     <div class="degree-box">
       <p>Empresa: <%= company.name %> </p>
+      <%= link_to "Perfil da loja", company_path(company), class: "btn btn-primary" %>
+
+
       <p>Setor: <%= company.sector %></p>
       <p>Endereço: <%= company.address %></p>
       <p><i class="fas fa-phone"></i> <%= company.phone %></p>
+      <p>Crie uma vaga para <%= company.name %></p>
+      <%#= link_to "Criar vaga", new_company_job_path, class: "btn btn-primary" %>
+
+<!--       EACH DO PARA LISTAR TODAS AS VAGAS DESTA EMPRESA
+CADA VAGA COMO UM CARD DENTRO DO CARD DA EMPRESA
+CADA VAGA COM BOTAO PARA PROCURAR CANDIDATOS, EDITAR E REMOVER
+ -->
+      <br>
+
+      <% company.jobs.each do |job| %>
+        <% job.title %>
+      <% end %>
+
     </div>
   <% end %>
 </div>
