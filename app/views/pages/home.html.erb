@@ -6,7 +6,11 @@
       <div>
         <h5>Vagas de emprego na palma da sua mão. Grátis!</h5>
       </div>
-      <%= link_to 'Como funciona', '#how', class: "btn btn-outline-light" %>
+      <% if user_signed_in? %>
+        <%= link_to 'Vagas disponíveis', root_path, class: "btn btn-primary" %>
+      <% else %>
+        <%= link_to 'Como funciona', '#how', class: "btn btn-outline-light" %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -14,15 +18,15 @@
 <div class="container steps-container" id="how">
   <div class="steps-text">
     <div class="steps-item">
-      <h5>Cadastre-se.</h5>
+      <h5>Cadastre-se</h5>
       <p>Cadastre-se e inclua sua experiência profissional e formação.</p>
     </div>
     <div class="steps-item">
-      <h5>Escolha.</h5>
+      <h5>Escolha</h5>
       <p>Adicione as vagas de seu interesse à sua lista de vagas favoritas.</p>
     </div>
     <div class="steps-item">
-      <h5>Pronto!</h5>
+      <h5>Pronto</h5>
       <p>As empresas interessadas entrarão em contato com você.</p>
     </div>
   </div>
@@ -31,30 +35,33 @@
   </div>
 </div>
 
-<div class="free-start">
-  <%= link_to "Emprego já!", new_user_registration_path, class: "btn-lg btn-primary" %>
-</div>
+<% if user_signed_in? %>
+<% else %>
+  <div class="free-start">
+    <%= link_to "Cadastrar", new_user_registration_path, class: "btn-lg btn-primary" %>
+  </div>
+<% end %>
 
 <div class="container features-container">
   <div class="features-cards">
     <div class="col-lg-4 features-box">
       <i class="fas fa-address-card"></i>
       <div class="features-card">
-        <h5>Digital.</h5>
+        <h5>Digital</h5>
         <p>Chega de andar por aí batendo de porta em porta com currículo de papel debaixo do braço.</p>
       </div>
     </div>
     <div class="col-lg-4 features-box">
       <i class="fas fa-map-marked-alt"></i>
       <div class="features-card">
-        <h5>Prático.</h5>
+        <h5>Prático</h5>
         <p>Você define a distância máxima para trabalhar e mostramos as vagas próximas a você.</p>
       </div>
     </div>
     <div class="col-lg-4 features-box">
       <i class="fas fa-user-check"></i>
       <div class="features-card">
-        <h5>Simples.</h5>
+        <h5>Simples</h5>
         <p>Sugerimos as vagas mais compatíveis com o seu perfil para você não perder tempo com filtros de busca.</p>
       </div>
     </div>

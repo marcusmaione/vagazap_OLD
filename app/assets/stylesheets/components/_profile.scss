@@ -17,6 +17,10 @@
   font-weight: 500;
 }
 
+.sub-header {
+  text-align: center;
+}
+
 .degrees-box {
   display: flex;
   flex-direction: column;
@@ -48,4 +52,22 @@
   margin: 35px 0px;
   border: solid 0.5px #495867;
   width: 100%;
+}
+
+
+.edit-box {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.edit-remove {
+  text-align: right;
+  color: #577399;
+}
+
+.edit-remove:hover {
+  font-weight: 900;
+  color: #577399;
+  text-decoration: none;
 }
