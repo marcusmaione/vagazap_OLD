@@ -8,8 +8,11 @@
       <p>Área: <%= experience.sector %></p>
       <p>Descrição: <%= experience.description %></p>
       <p>Tempo na empresa: <%= experience.level %></p>
+      <div class="edit-box">
+        <%= link_to "Editar", edit_experience_path(experience), class: "edit-remove" %>
+      </div>
     </div>
   <% end %>
 </div>
 
-<%= link_to "Incluir experiência", new_experience_path, class: "btn btn-secondary" %>
+<%= link_to "Incluir experiência", new_experience_path, class: "btn btn-secondary btn-sm" %>

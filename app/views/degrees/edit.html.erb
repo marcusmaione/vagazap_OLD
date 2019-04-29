@@ -1,0 +1,25 @@
+<div class="container col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div class="form-box">
+
+    <h5>Editar diploma:</h5>
+
+    <%= simple_form_for(@degree) do |f| %>
+      <%= f.error_notification %>
+
+      <%= f.input :level, required: true, collection: Degree::DEGREELEVELS, :label => "Nível de escolaridade:" %>
+      <%= f.input :school_name, required: true, :label => "Nome da escola/instituição:" %>
+      <%= f.input :field, hint: "Apenas para Ensino Superior", :label => "Curso:" %>
+      <%= f.input :complete, as: :boolean, :label => "Completo?" %>
+
+      <div class="form-actions">
+        <%= f.submit class: 'btn btn-primary', value: "Confirmar" %>
+      </div>
+    <% end %>
+      <br>
+      <%= link_to "Voltar", profile_path, class: "btn btn-tertiary btn-sm" %>
+      <br>
+      <%= link_to "Deletar este diploma", degree_path(@degree), data: { confirm: "Tem certeza?" },
+            method: :delete, class: "edit-remove" %>
+
+  </div>
+</div>

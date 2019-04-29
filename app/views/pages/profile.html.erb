@@ -2,17 +2,16 @@
   <div class="profile-box">
 
     <% if @user.degrees.empty? && @user.companies.empty? %>
-      <p>Quero ver as vagas!</p>
+      <p class="sub-header">Quer encontrar uma vaga adequada ao seu perfil?</p>
       <%= link_to "Completar perfil", new_degree_path, class: "btn btn-primary" %>
       <div class="separator">
       </div>
-      <p>Quero contratar!</p>
+      <p class="sub-header">Representa uma empresa e quer contratar?</p>
       <%= link_to "Cadastrar empresa", new_company_path, class: "btn btn-secondary" %>
     <% else %>
-      <%= link_to "Começar", root_path, class: "btn btn-primary" %>
+      <%= link_to "Vagas disponíveis", root_path, class: "btn btn-primary" %>
       <%= render 'user-details' %>
       <% if current_user.companies.count == 0 %>
-        <%= render 'user-details' %>
         <%= render 'user-degrees', degrees: @degrees %>
         <%= render 'user-experiences', experiences: @experiences %>
         <%= render 'user-courses', courses: @courses %>

@@ -1,0 +1,27 @@
+<div class="container col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div class="form-box">
+
+    <h5>Editar experiência:</h5>
+
+    <%= simple_form_for(@experience) do |f| %>
+      <%= f.error_notification %>
+
+      <%= f.input :company_name, required: true, :label => "Nome da empresa:" %>
+      <%= f.input :company_sector, required: true, collection: Company::COMPANYSECTORS, :label => "Setor da empresa:" %>
+      <%= f.input :level, required: true, collection: Experience::EXPERIENCELEVELS, :label => "Anos de experiência:" %>
+      <%= f.input :title, required: true, collection: Job::JOBPOSITIONS, :label => "Cargo:" %>
+      <%= f.input :sector, required: true, collection: Job::JOBSECTORS, :label => "Setor do cargo:" %>
+      <%= f.input :description, hint: "Breve descrição das atividades", :label => "Descrição:" %>
+
+      <div class="form-actions">
+        <%= f.submit class: 'btn btn-primary', value: "Confirmar" %>
+      </div>
+    <% end %>
+      <br>
+      <%= link_to "Voltar", profile_path, class: "btn btn-tertiary btn-sm" %>
+      <br>
+      <%= link_to "Deletar esta experiência", experience_path(@experience), data: { confirm: "Tem certeza?" },
+            method: :delete, class: "edit-remove" %>
+
+  </div>
+</div>

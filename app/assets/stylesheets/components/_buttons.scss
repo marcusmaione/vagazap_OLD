@@ -56,6 +56,24 @@
   top: 2px;
 }
 
+.btn-tertiary {
+  color: rgb(30, 30, 30) !important;
+  text-decoration: none !important;
+  background-color: #BDD5EA !important;
+  border-color: #BDD5EA !important;
+  margin: 10px !important;
+  position: relative;
+}
+
+.btn-tertiary:hover {
+  opacity: 0.7 !important;
+}
+
+.btn-tertiary:active {
+  opacity: 0.5 !important;
+  top: 2px;
+}
+
 .btn-facebook {
   background-color: #3B5998 !important;
   border-color: #3B5998 !important;

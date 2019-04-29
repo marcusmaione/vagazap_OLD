@@ -10,8 +10,11 @@
       <% else %>
         <p>Incompleto</p>
       <% end %>
+      <div class="edit-box">
+        <%= link_to "Editar", edit_course_path(course), class: "edit-remove" %>
+      </div>
     </div>
   <% end %>
 </div>
 
-<%= link_to "Incluir curso", new_course_path, class: "btn btn-secondary" %>
+<%= link_to "Incluir curso", new_course_path, class: "btn btn-secondary btn-sm" %>

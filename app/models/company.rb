@@ -2,7 +2,7 @@ class Company < ApplicationRecord
   COMPANYSECTORS = ["Agricultura e Pecuária", "Alimentos e Bebidas", "Arquitetura e Engenharia",
                     "Arte e Cultura", "Beleza e Cosméticos", "Bares e Restaurantes",
                     "Call Center e Telemarketing", "Comércio Atacado", "Comércio Varejo",
-                    "Construção", "Design", "Enfermagem e Medicina", "Escolas e Cursos",
+                    "Construção", "Consultoria", "Design", "Enfermagem e Medicina", "Escolas e Cursos",
                     "Elétrico", "Fotografia e Vídeo", "Eventos", "Farmácia", "Hospedagem e Turismo",
                     "Imobiliário", "Jornalismo", "Laboratórios", "Limpeza", "Manutenção e Reparos",
                     "Marketing", "Mercados e Padarias", "Mercado Financeiro e de Capitais", "Mineração",

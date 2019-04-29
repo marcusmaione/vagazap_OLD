@@ -14,7 +14,7 @@ class Job < ApplicationRecord
                   "Zelador(a)"].freeze
   JOBSECTORS = ["Administrativo", "Atendimento e Recepção", "Contábil", "Comercial / Marketing",
                 "Departamento Pessoal", "Estoque", "Financeiro", "Manutenção", "Operacional",
-                "Planejamento", "Produção", "Projetos", "Recursos Humanos", "Serviços Gerais",
+                "Planejamento e Estratégia", "Produção", "Projetos", "Recursos Humanos", "Serviços Gerais",
                 "Suporte e Apoio Operacional", "Transporte e Logística", "Vendas"].freeze
   SALARYRANGES = ["998 a 1.500", "1.501 a 2.000", "2.000 a 3.000", "3.001 a 4.000",
                   "4.001 a 6.000", "6.001 a 8.000", "8.001 a 10.000", "acima de 10.000",
