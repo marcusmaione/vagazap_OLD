@@ -3,13 +3,18 @@
 
     <% if @user.degrees.empty? && @user.companies.empty? %>
       <p class="sub-header">Quer encontrar uma vaga adequada ao seu perfil?</p>
-      <%= link_to "Completar perfil", new_degree_path, class: "btn btn-primary" %>
+      <%= link_to "Completar perfil", new_user_path, class: "btn btn-primary" %>
       <div class="separator">
       </div>
       <p class="sub-header">Representa uma empresa e quer contratar?</p>
       <%= link_to "Cadastrar empresa", new_company_path, class: "btn btn-secondary" %>
     <% else %>
-      <%= link_to "Vagas disponíveis", root_path, class: "btn btn-primary" %>
+
+      <h5>Obrigado por se cadastrar! Começaremos a apresentar as vagas a partir de 01 de Junho.</h5>
+
+      <!-- Habilitar botão quando tiver vagas -->
+      <%#= link_to "Vagas disponíveis", root_path, class: "btn btn-primary" %>
+
       <%= render 'user-details' %>
       <% if current_user.companies.count == 0 %>
         <%= render 'user-degrees', degrees: @degrees %>
