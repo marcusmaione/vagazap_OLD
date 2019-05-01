@@ -7,16 +7,18 @@ class DegreesController < ApplicationController
   end
 
   def index
-    @degrees = current_user.degrees
+    @degrees = policy_scope(Degree)
   end
 
   def new
     @degree = Degree.new
+    authorize @degree
   end
 
   def create
     @degree = Degree.new(degree_params)
     @degree.user = current_user
+    authorize @degree
     if @degree.save
       if current_user.degrees.count == 1
         redirect_to new_experience_path
@@ -49,6 +51,7 @@ class DegreesController < ApplicationController
 
   def set_degree
     @degree = Degree.find(params[:id])
+    authorize @degree
   end
 
   def degree_params

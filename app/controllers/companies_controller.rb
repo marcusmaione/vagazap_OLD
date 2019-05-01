@@ -7,16 +7,18 @@ class CompaniesController < ApplicationController
   end
 
   def index
-    @companies = current_user.companies
+    @companies = policy_scope(Company)
   end
 
   def new
     @company = Company.new
+    authorize @company
   end
 
   def create
     @company = Company.new(company_params)
     @company.user = current_user
+    authorize @company
     if @company.save
       if current_user.companies.count == 1
         redirect_to edit_user_registration_path
@@ -49,6 +51,7 @@ class CompaniesController < ApplicationController
 
   def set_company
     @company = Company.find(params[:id])
+    authorize @company
   end
 
   def company_params

@@ -7,16 +7,18 @@ class CoursesController < ApplicationController
   end
 
   def index
-    @courses = current_user.courses
+    @courses = policy_scope(Course)
   end
 
   def new
     @course = Course.new
+    authorize @course
   end
 
   def create
     @course = Course.new(course_params)
     @course.user = current_user
+    authorize @course
     if @course.save
       redirect_to profile_path
     else
@@ -45,6 +47,7 @@ class CoursesController < ApplicationController
 
   def set_course
     @course = Course.find(params[:id])
+    authorize @course
   end
 
   def course_params
