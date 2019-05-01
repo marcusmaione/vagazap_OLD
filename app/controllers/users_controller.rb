@@ -7,10 +7,12 @@ class UsersController < ApplicationController
 
   def new
     @user = current_user
+    authorize @user
   end
 
   def create
     @user = current_user
+    authorize @user
     if @user.save(detail_params)
       redirect_to profile_path
     else
@@ -37,6 +39,7 @@ class UsersController < ApplicationController
 
   def set_user
     @user = current_user
+    authorize @user
   end
 
   def detail_params
