@@ -3,7 +3,7 @@
 <div class="degrees-box">
   <% @companies.each do |company| %>
     <div class="degree-box">
-      <p>Empresa: <%= company.name %> </p>
+      <p><%= company.name %> </p>
       <%= link_to "Perfil da loja", company_path(company), class: "btn btn-primary" %>
 
 
