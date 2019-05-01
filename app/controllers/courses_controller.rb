@@ -18,11 +18,7 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
     @course.user = current_user
     if @course.save
-      if current_user.courses.count == 1
-        redirect_to edit_user_registration_path
-      else
-        redirect_to profile_path
-      end
+      redirect_to profile_path
     else
       render :new
     end

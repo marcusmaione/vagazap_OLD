@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'profile', to: 'pages#profile'
   # Generic syntax:
   # verb 'path', to: 'controller#action', as: :route_name
+  resources :users
   resources :degrees
   resources :experiences
   resources :courses
