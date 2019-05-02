@@ -25,7 +25,9 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(detail_params)
-      if current_user.degrees.empty?
+      if current_user.companies.count == 1
+        redirect_to profile_path
+      elsif current_user.degrees.empty?
         redirect_to new_degree_path
       else
         redirect_to profile_path

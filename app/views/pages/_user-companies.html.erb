@@ -3,24 +3,17 @@
 <div class="degrees-box">
   <% @companies.each do |company| %>
     <div class="degree-box">
+      <%#= link_to "Perfil da loja", company_path(company), class: "btn btn-primary" %>
       <p><%= company.name %> </p>
-      <%= link_to "Perfil da loja", company_path(company), class: "btn btn-primary" %>
-
-
       <p>Setor: <%= company.sector %></p>
       <p>Endereço: <%= company.address %></p>
       <p><i class="fas fa-phone"></i> <%= company.phone %></p>
-      <p>Crie uma vaga para <%= company.name %></p>
-      <%= link_to "Criar vaga", new_company_job_path(company), class: "btn btn-primary" %>
 
-      <br>
+      <%#= link_to "Criar vaga", new_company_job_path(company), class: "btn btn-primary" %>
 
-      <% company.jobs.each do |job| %>
-        <% job.title %>
-        <%= link_to "Detalhes da vaga", company_job_path(job), class: "btn btn-primary" %>
-        Link para editar job
-        Link para remover
-      <% end %>
+      <div class="edit-box">
+        <%= link_to "Editar", edit_company_path(company), class: "edit-remove" %>
+      </div>
 
     </div>
   <% end %>

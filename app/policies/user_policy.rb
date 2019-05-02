@@ -18,7 +18,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user
+    @user == user
   end
 
   def update?
@@ -26,6 +26,6 @@ class UserPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    @user == user
   end
 end
