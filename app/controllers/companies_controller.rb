@@ -21,7 +21,7 @@ class CompaniesController < ApplicationController
     authorize @company
     if @company.save
       if current_user.companies.count == 1
-        redirect_to edit_user_registration_path
+        redirect_to edit_user_path(@company.user)
       else
         redirect_to profile_path
       end

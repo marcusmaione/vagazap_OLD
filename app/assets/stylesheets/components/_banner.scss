@@ -55,6 +55,33 @@
   }
 }
 
+.banner h6 {
+  font-size: 16px;
+  color: white;
+  line-height: 1.2;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .banner h6 {
+  font-size: 20px;
+  line-height: 1.5;
+  }
+}
+
+.banner a {
+  color: white;
+  line-height: 1.2;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .banner a {
+  line-height: 1.5;
+  }
+}
+
+
 .btn-how {
   color: rgb(20,20,20);
   display: block;
