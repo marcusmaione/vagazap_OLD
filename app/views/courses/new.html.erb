@@ -4,9 +4,9 @@
    <h5>Incluir curso:</h5>
 
    <%= simple_form_for(@course) do |f| %>
-     <%= f.input :category, collection: Course::COURSECATEGORIES, :label => "Tipo de curso:" %>
-     <%= f.input :school_name, :label => "Nome do curso/instituição:" %>
-     <%= f.input :description, hint: "Ex.: inglês nível intermediário", :label => "Descrição:" %>
+     <%= f.input :category, required: true, collection: Course::COURSECATEGORIES, :label => "Tipo de curso:" %>
+     <%= f.input :school_name, required: true, :label => "Nome do curso/instituição:" %>
+     <%= f.input :description, required: true, hint: "Ex.: inglês nível intermediário", :label => "Descrição:" %>
      <%= f.input :complete, as: :boolean, :label => "Completo?" %>
 
    <div class="form-actions">
