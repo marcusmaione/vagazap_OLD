@@ -13,8 +13,12 @@
                     :label => "Sobrenome:" %>
         <%= f.input :phone,
                     required: true,
-                    hint: "Incluir DDD. Exemplo: (21)99999-9999",
+                    hint: "Incluir DDD. Exemplo: (21)99999-9999.",
                     :label => "Celular:" %>
+        <%= f.input :cpf,
+                    required: true,
+                    hint: "Necessário para evitar cadastro duplicado. Inserir apenas os números, sem pontos ou traços.",
+                    :label => "CPF:" %>
         <%= f.input :avatar, :label => "Incluir uma foto de perfil:" %>
         <%= f.input :avatar_cache, as: :hidden %>
 
