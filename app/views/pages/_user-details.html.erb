@@ -6,6 +6,9 @@
     <p>CPF: <%= current_user.cpf %></p>
     <p><i class="fas fa-envelope"></i> <%= current_user.email %></p>
     <p><i class="fas fa-phone"></i> <%= current_user.phone %></p>
+    <p><i class="fas fa-home"></i> <%= current_user.address %></p>
+    <p><%= current_user.address_complement %></p>
+
     <div class="edit-box">
       <%= link_to "Editar", edit_user_registration_path, class: "edit-remove" %>
     </div>
