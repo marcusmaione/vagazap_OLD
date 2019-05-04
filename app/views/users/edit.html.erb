@@ -15,6 +15,13 @@
                     required: true,
                     hint: "Incluir DDD. Exemplo: (21)99999-9999.",
                     :label => "Celular:" %>
+        <%= f.input :address,
+                    required: true,
+                    hint: "IMPORTANTE: Apenas rua e número.",
+                    :label => "Endereço (rua e número):" %>
+        <%= f.input :address_complement,
+                    hint: "Apto, bloco, casa, etc.",
+                    :label => "Complemento:" %>
         <%= f.input :cpf,
                     required: true,
                     hint: "Necessário para evitar cadastro duplicado. Inserir apenas os números, sem pontos ou traços.",
