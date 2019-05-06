@@ -85,12 +85,21 @@
 .edit-box {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+}
+
+.edit-create-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
 }
 
 .edit-remove {
   text-align: right;
   color: #577399;
+  margin-left: 16px;
 }
 
 .edit-remove:hover {
