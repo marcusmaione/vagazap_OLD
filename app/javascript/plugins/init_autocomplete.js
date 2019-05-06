@@ -8,3 +8,12 @@ const initAutocomplete = () => {
 };
 
 export { initAutocomplete };
+
+const initAutocomplete2 = () => {
+  const addressInput2 = document.getElementById('company_address');
+  if (addressInput2) {
+    places({ container: addressInput2 });
+  }
+};
+
+export { initAutocomplete2 };
