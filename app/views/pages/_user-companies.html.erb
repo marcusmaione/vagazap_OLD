@@ -6,16 +6,16 @@
       <%#= link_to "Perfil da loja", company_path(company), class: "btn btn-primary" %>
       <p><%= company.name %> </p>
       <p>Setor: <%= company.sector %></p>
+      <p><i class="fas fa-phone"></i> <%= company.phone %></p>
       <p><i class="fas fa-home"></i> <%= company.address %></p>
       <% if company.address_complement.empty? %>
       <% else %>
        <p>Complemento: <%= company.address_complement %></p>
       <% end %>
-      <p><i class="fas fa-phone"></i> <%= company.phone %></p>
 
-      <%#= link_to "Criar vaga", new_company_job_path(company), class: "btn btn-primary" %>
 
-      <div class="edit-box">
+      <div class="edit-create-box">
+        <%= link_to "Criar vaga", new_company_job_path(company), class: "btn btn-sm btn-create-job" %>
         <%= link_to "Editar", edit_company_path(company), class: "edit-remove" %>
       </div>
 
@@ -23,4 +23,4 @@
   <% end %>
 </div>
 
-<%= link_to "Incluir empresa", new_company_path, class: "btn btn-secondary" %>
+<%= link_to "Incluir empresa", new_company_path, class: "btn btn-secondary btn-sm" %>

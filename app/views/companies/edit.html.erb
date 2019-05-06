@@ -5,10 +5,24 @@
 
     <%= simple_form_for(@company) do |f| %>
 
-       <%= f.input :name, required: true, :label => "Nome da empresa:" %>
-       <%= f.input :sector, required: true, collection: Company::COMPANYSECTORS, :label => "Setor:" %>
-       <%= f.input :address, required: true, :label => "Endereço completo:" %>
-       <%= f.input :phone, required: true, :label => "Telefone:" %>
+        <%= f.input :name,
+                    required: true,
+                    :label => "Nome da empresa:" %>
+        <%= f.input :sector,
+                    required: true,
+                    :label => "Setor da empresa:",
+                    collection: Company::COMPANYSECTORS %>
+        <%= f.input :phone,
+                    required: true,
+                    hint: "Incluir DDD. Exemplo: (21)99999-9999.",
+                    :label => "Telefone:" %>
+        <%= f.input :address,
+                    required: true,
+                    hint: "IMPORTANTE: Apenas rua e número.",
+                    :label => "Endereço (rua e número):" %>
+        <%= f.input :address_complement,
+                    hint: "Bloco, andar, sala, etc.",
+                    :label => "Complemento:" %>
 
     <div class="form-actions">
       <%= f.submit class: 'btn btn-primary', value: "Confirmar" %>
