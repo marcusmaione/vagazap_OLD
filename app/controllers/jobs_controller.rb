@@ -7,19 +7,23 @@ class JobsController < ApplicationController
   end
 
   def index
-    @jobs = current_user.jobs
+    @company = Company.find(params[:company_id])
+    @jobs = policy_scope(Job)
+    authorize @company.jobs
   end
 
   def new
     @company = Company.find(params[:company_id])
     @job = Job.new(company: @company)
+    authorize @job
   end
 
   def create
     @job = Job.new(job_params)
+    authorize @job
     @job.company = Company.find(params[:company_id])
     if @job.save
-      redirect_to profile_path
+      redirect_to company_jobs_path(@job.company)
     else
       render :new
     end
@@ -46,6 +50,7 @@ class JobsController < ApplicationController
 
   def set_job
     @job = Job.find(params[:id])
+    authorize @job
   end
 
   def job_params

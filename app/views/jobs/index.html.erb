@@ -1,0 +1,31 @@
+<div class="container col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div class="profile-box">
+
+    <%= link_to "Criar vaga", new_company_job_path(@company, @job), class: "btn btn-create-job" %>
+
+    <h5>Vagas <%= @company.name %>:</h5>
+
+    <div class="degrees-box">
+      <% @company.jobs.each do |job| %>
+        <div class="degree-box">
+          <p>Cargo: <%= job.title %> </p>
+          <p>Setor: <%= job.sector %></p>
+          <p>Experiência desejada: <%= job.level %></p>
+          <p>Faixa salarial: <%= job.salary_range %></p>
+          <p>Benefícios: <%= job.benefit %></p>
+          <p>Descrição: <%= job.description %></p>
+
+          <div class="edit-create-box">
+            <%= link_to "Candidatos", profile_path, class: "btn btn-sm btn-candidates" %>
+            <%= link_to "Editar", edit_company_job_path(@company, job), class: "edit-remove" %>
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+
+    <br>
+    <%= link_to "Voltar", profile_path, class: "btn btn-tertiary btn-sm" %>
+
+  </div>
+</div>
