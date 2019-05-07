@@ -2,7 +2,7 @@
 
 <div class="degrees-box">
   <div class="degree-box">
-    <p>Nome: <%= current_user.first_name %> <%= current_user.last_name %></p>
+    <p style="font-weight: 900"> <%= current_user.first_name %> <%= current_user.last_name %></p>
     <p>CPF: <%= current_user.cpf %></p>
     <p><i class="fas fa-envelope"></i> <%= current_user.email %></p>
     <p><i class="fas fa-phone"></i> <%= current_user.phone %></p>
@@ -11,7 +11,7 @@
     <% else %>
      <p>Complemento: <%= current_user.address_complement %></p>
     <% end %>
-
+    <p><i class="fas fa-city"></i> <%= current_user.city %></p>
     <div class="edit-box">
       <%= link_to "Editar", edit_user_registration_path, class: "edit-remove" %>
     </div>

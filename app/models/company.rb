@@ -15,6 +15,12 @@ class Company < ApplicationRecord
   has_many :jobs, :dependent => :destroy
   has_many :favorites, through: :jobs
 
-  geocoded_by :address
+  def company_city
+    address.split(', ')[1] + ', ' + address.split(', ')[2] + ', ' + address.split(', ')[3]
+  end
+
+  geocoded_by :company_city
   after_validation :geocode, if: :will_save_change_to_address?
+  # geocoded_by :address
+  # after_validation :geocode, if: :will_save_change_to_address?
 end

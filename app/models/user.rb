@@ -12,8 +12,14 @@ class User < ApplicationRecord
   has_many :favorites, :dependent => :destroy
   mount_uploader :avatar, AvatarUploader
 
-  geocoded_by :address
+  def city
+    address.split(', ')[1] + ', ' + address.split(', ')[2] + ', ' + address.split(', ')[3]
+  end
+
+  geocoded_by :city
   after_validation :geocode, if: :will_save_change_to_address?
+  # geocoded_by :address
+  # after_validation :geocode, if: :will_save_change_to_address?
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice('provider', 'uid')
