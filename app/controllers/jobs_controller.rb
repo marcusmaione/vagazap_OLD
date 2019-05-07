@@ -30,12 +30,15 @@ class JobsController < ApplicationController
   end
 
   def edit
+    @company = Company.find(params[:company_id])
+    @job.company = @company
   end
 
   def update
-    @job.user = current_user
+    @company = Company.find(params[:company_id])
+    @job.company = @company
     if @job.update(job_params)
-      redirect_to profile_path
+      redirect_to company_jobs_path(@job.company)
     else
       render :update
     end
