@@ -3,6 +3,13 @@
 <div class="degrees-box">
   <% @companies.each do |company| %>
     <div class="degree-box">
+
+      <% if company.company_incomplete? %>
+        <h5>Você precisa completar o perfil dessa empresa para que possamos te conectar com os candidatos.</h5>
+        <%= link_to "Completar empresa", edit_company_path(company), class: "btn btn-primary" %>
+      <% else %>
+      <% end %>
+
       <p style="font-weight: 900"><%= company.name %> </p>
       <p>Setor: <%= company.sector %></p>
       <p><i class="fas fa-phone"></i> <%= company.phone %></p>
