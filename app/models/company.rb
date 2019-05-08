@@ -16,7 +16,35 @@ class Company < ApplicationRecord
   has_many :favorites, through: :jobs
 
   def company_city
-    address.split(', ')[1] + ', ' + address.split(', ')[2] + ', ' + address.split(', ')[3]
+    if address.nil? || address == ""
+      # 'Rio de Janeiro, Rio de Janeiro, Brazil'
+    else
+      address.split(', ')[1] + ', ' + address.split(', ')[2] + ', ' + address.split(', ')[3]
+    end
+  end
+
+  def name_incomplete?
+    name.nil? || name == ''
+  end
+
+  def address_incomplete?
+    address.nil? || address == ''
+  end
+
+  def sector_incomplete?
+    sector.nil? || sector == ''
+  end
+
+  def phone_incomplete?
+    phone.nil? || phone == ''
+  end
+
+  def coordinates_incomplete?
+    latitude.nil?
+  end
+
+  def company_incomplete?
+    name_incomplete? || address_incomplete? || sector_incomplete? || phone_incomplete? || coordinates_incomplete?
   end
 
   geocoded_by :company_city

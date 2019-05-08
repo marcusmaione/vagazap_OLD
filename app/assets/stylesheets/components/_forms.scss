@@ -38,3 +38,16 @@
   color: #495867;
   font-weight: 500;
 }
+
+.text-link {
+  color: #577399 !important;
+  text-decoration: none !important;
+  margin: 10px !important;
+  font-weight: 500;
+  position: relative;
+}
+
+.text-link:hover {
+  opacity: 0.7 !important;
+}
+
