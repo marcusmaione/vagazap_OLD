@@ -13,8 +13,14 @@
       <h6>Obrigado por se cadastrar! As vagas estarão disponíveis a partir de 01 de Junho.</h6>
       <a href="mailto:marcus.maione@vagazap.com">Dúvidas ou sugestões: marcus.maione@vagazap.com</a>
 
+    <% if @user.profile_incomplete? %>
+      <br>
+      <h6>Você precisa completar o seu perfil para que possamos te conectar com as vagas.</h6>
+      <%= link_to "Completar perfil", edit_user_registration_path, class: "btn btn-primary" %>
+    <% else %>
       <!-- Habilitar botão quando tiver vagas -->
       <%#= link_to "Vagas disponíveis", root_path, class: "btn btn-primary" %>
+    <% end %>
 
       <%= render 'user-details' %>
       <% if current_user.companies.count == 0 %>

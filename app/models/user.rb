@@ -13,7 +13,35 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   def city
-    address.split(', ')[1] + ', ' + address.split(', ')[2] + ', ' + address.split(', ')[3]
+    if address.nil? || address == ""
+      # 'Rio de Janeiro, Rio de Janeiro, Brazil'
+    else
+      address.split(', ')[1] + ', ' + address.split(', ')[2] + ', ' + address.split(', ')[3]
+    end
+  end
+
+  def name_incomplete?
+    first_name.nil? || first_name == ''
+  end
+
+  def address_incomplete?
+    address.nil? || address == ''
+  end
+
+  def cpf_incomplete?
+    cpf.nil? || cpf == ''
+  end
+
+  def phone_incomplete?
+    phone.nil? || phone == ''
+  end
+
+  def coordinates_incomplete?
+    latitude.nil?
+  end
+
+  def profile_incomplete?
+    name_incomplete? || address_incomplete? || cpf_incomplete? || phone_incomplete? || coordinates_incomplete?
   end
 
   geocoded_by :city

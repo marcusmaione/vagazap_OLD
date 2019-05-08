@@ -7,7 +7,7 @@
       <p>Setor: <%= company.sector %></p>
       <p><i class="fas fa-phone"></i> <%= company.phone %></p>
       <p><i class="fas fa-home"></i> <%= company.address %></p>
-      <% if company.address_complement.empty? %>
+      <% if company.address_complement.nil? %>
       <% else %>
        <p>Complemento: <%= company.address_complement %></p>
       <% end %>
