@@ -107,3 +107,10 @@
   color: #577399;
   text-decoration: none;
 }
+
+.complete-company-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
