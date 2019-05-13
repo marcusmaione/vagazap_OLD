@@ -3,7 +3,7 @@
 
     <% if @user.degrees.empty? && @user.companies.empty? %>
       <p class="sub-header">Quer encontrar uma vaga adequada ao seu perfil?</p>
-      <%= link_to "Completar perfil", new_user_path, class: "btn btn-primary" %>
+      <%= link_to "Completar perfil", new_degree_path, class: "btn btn-primary" %>
       <div class="separator">
       </div>
       <p class="sub-header">Representa uma empresa e quer contratar?</p>

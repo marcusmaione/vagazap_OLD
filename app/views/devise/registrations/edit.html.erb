@@ -11,6 +11,7 @@
       <% end %>
 
         <%= f.input :first_name,
+                    autofocus: true,
                     required: true,
                     :label => "Nome:" %>
         <%= f.input :last_name,
@@ -18,7 +19,7 @@
                     :label => "Sobrenome:" %>
         <%= f.input :phone,
                     required: true,
-                    hint: "Incluir DDD. Exemplo: (21)99999-9999.",
+                    hint: "Incluir DDD. Exemplo: 21912345678. Inserir apenas os números, sem pontos ou traços.",
                     :label => "Celular:" %>
         <%= f.input :address,
                     required: true,

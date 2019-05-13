@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :set_job, only: [:show, :edit, :update, :destroy, :all_candidates, :candidates]
   skip_before_action :authenticate_user!, only: [:show]
 
   def show
@@ -47,6 +47,19 @@ class JobsController < ApplicationController
   def destroy
     @job.destroy
     redirect_to profile_path
+  end
+
+  def candidates
+    @filtered_candidates = User.initial_filter
+    candidates_hash = {}
+    match_potential = 0
+    @filtered_candidates.each do |candidate|
+      match_potential -= 2 if candidate.first_name == 'Joao'
+      match_potential -= 1 if candidate.last_name == 'Silva'
+      candidates_hash[candidate] = match_potential
+      match_potential = 0
+    end
+    @all_candidates = candidates_hash.sort_by { |key, value| value }
   end
 
   private
