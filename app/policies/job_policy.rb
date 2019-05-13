@@ -28,4 +28,8 @@ class JobPolicy < ApplicationPolicy
   def destroy?
     record.company.user == user
   end
+
+  def candidates?
+    return true
+  end
 end

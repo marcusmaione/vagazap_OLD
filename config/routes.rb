@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :companies do
     resources :jobs
   end
+
+  get '/companies/:company_id/jobs/:id/candidates', to: 'jobs#candidates', :as => :job_candidates
 end

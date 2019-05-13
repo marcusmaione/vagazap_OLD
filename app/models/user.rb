@@ -12,6 +12,13 @@ class User < ApplicationRecord
   has_many :favorites, :dependent => :destroy
   mount_uploader :avatar, AvatarUploader
 
+  validates :first_name, length: { minimum: 2 }, presence: true
+  validates :last_name, length: { minimum: 2 }, presence: true
+  validates :address, length: { minimum: 5 }, presence: true
+  validates :phone, length: { minimum: 10 }, numericality: { only_integer: true },
+                    presence: true
+  validates :cpf, format: { with: /[0-9]{11}/, message: "apenas números" }, presence: true, uniqueness: true
+
   def city
     if address.nil? || address == ""
       # 'Rio de Janeiro, Rio de Janeiro, Brazil'
@@ -42,6 +49,10 @@ class User < ApplicationRecord
 
   def profile_incomplete?
     name_incomplete? || address_incomplete? || cpf_incomplete? || phone_incomplete? || coordinates_incomplete?
+  end
+
+  def self.initial_filter
+    joins(:experiences, :degrees).where(degrees: { level: 'Ensino Superior' })
   end
 
   geocoded_by :city

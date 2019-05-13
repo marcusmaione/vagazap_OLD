@@ -12,9 +12,30 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
+        <%= f.input :first_name,
+                    autofocus: true,
+                    required: true,
+                    :label => "Nome:" %>
+        <%= f.input :last_name,
+                    required: true,
+                    :label => "Sobrenome:" %>
+        <%= f.input :phone,
+                    required: true,
+                    hint: "Incluir DDD. Exemplo: 21912345678. Inserir apenas os números, sem pontos ou traços.",
+                    :label => "Celular:" %>
+        <%= f.input :address,
+                    required: true,
+                    hint: "IMPORTANTE: Apenas rua e número.",
+                    :label => "Endereço (rua e número):" %>
+        <%= f.input :address_complement,
+                    hint: "Apto, bloco, casa, etc.",
+                    :label => "Complemento:" %>
+        <%= f.input :cpf,
+                    required: true,
+                    hint: "Necessário para evitar cadastro duplicado. Inserir apenas os números, sem pontos ou traços.",
+                    :label => "CPF:" %>
         <%= f.input :email,
                     required: true,
-                    autofocus: true,
                     input_html: { autocomplete: "email" },
                     :label => "E-mail:" %>
         <%= f.input :password,
