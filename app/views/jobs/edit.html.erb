@@ -16,6 +16,10 @@
                    required: true,
                    collection: Experience::EXPERIENCELEVELS,
                    :label => "Experiência desejada:" %>
+       <%= f.input :education_requirement,
+                   required: true,
+                   collection: Degree::DEGREELEVELS,
+                   :label => "Educação desejada:" %>
        <%= f.input :salary_range,
                    required: true,
                    collection: Job::SALARYRANGES,
