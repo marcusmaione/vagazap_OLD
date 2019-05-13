@@ -20,11 +20,7 @@ class CompaniesController < ApplicationController
     @company.user = current_user
     authorize @company
     if @company.save
-      if current_user.companies.count == 1
-        redirect_to edit_user_path(@company.user)
-      else
-        redirect_to profile_path
-      end
+      redirect_to profile_path
     else
       render :new
     end
