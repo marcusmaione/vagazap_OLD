@@ -52,9 +52,8 @@ class User < ApplicationRecord
   end
 
   def self.initial_filter(job)
-    # current_job = Job.find(43)
-    joins(:experiences, :degrees).where(degrees: { level: job.education_requirement })
-    # joins(:experiences, :degrees).where(degrees: { level: 'Ensino Superior' })
+    # joins(:experiences, :degrees).where(degrees: { level: job.education_requirement })
+    joins(:experiences).where(experiences: { title: job.title })
   end
 
   geocoded_by :city

@@ -6,7 +6,7 @@
     <div class="degrees-box">
       <% @all_candidates.each do |candidate| %>
 
-        <% if candidate[1] < 0 %>
+        <% if candidate[1] <= 0 %>
           <div class="degree-box">
             <p>Nome: <%= candidate[0].first_name %> <%= candidate[0].last_name %> </p>
             <p>Nome: <%= candidate[0].degrees[0].level %> <%= candidate[0].experiences[0].title %> </p>

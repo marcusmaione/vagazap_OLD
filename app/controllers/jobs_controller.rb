@@ -49,14 +49,30 @@ class JobsController < ApplicationController
     redirect_to profile_path
   end
 
+# def candidates
+#   job = Job.find(params[:id])
+#   @filtered_candidates = User.initial_filter(job)
+#   candidates_hash = {}
+#   match_potential = 0
+#   @filtered_candidates.each do |candidate|
+#     match_potential -= 2 if candidate.degrees[0].level == 'Ensino Superior'
+#     match_potential -= 1 if candidate.degrees[0].level == 'Ensino Médio'
+#     candidates_hash[candidate] = match_potential
+#     match_potential = 0
+#   end
+#   @all_candidates = candidates_hash.sort_by { |key, value| value }
+# end
+
   def candidates
     job = Job.find(params[:id])
     @filtered_candidates = User.initial_filter(job)
     candidates_hash = {}
     match_potential = 0
     @filtered_candidates.each do |candidate|
-      match_potential -= 2 if candidate.first_name == 'Joao'
-      match_potential -= 1 if candidate.last_name == 'Silva'
+      candidate.degrees.each do |degree|
+        match_potential -= 2 if degree.level.include?('Ensino Superior')
+        match_potential -= 1 if degree.level.include?('Ensino Médio')
+      end
       candidates_hash[candidate] = match_potential
       match_potential = 0
     end
