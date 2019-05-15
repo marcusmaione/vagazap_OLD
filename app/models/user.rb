@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :first_name, length: { minimum: 2 }, presence: true
   validates :last_name, length: { minimum: 2 }, presence: true
   validates :address, length: { minimum: 5 }, presence: true
-  validates :phone, length: { minimum: 10 }, numericality: { only_integer: true },
+  validates :phone, length: { minimum: 11 }, numericality: { only_integer: true },
                     presence: true
   validates :cpf, format: { with: /[0-9]{11}/, message: "apenas números" }, presence: true, uniqueness: true
 
@@ -51,8 +51,10 @@ class User < ApplicationRecord
     name_incomplete? || address_incomplete? || cpf_incomplete? || phone_incomplete? || coordinates_incomplete?
   end
 
-  def self.initial_filter
-    joins(:experiences, :degrees).where(degrees: { level: 'Ensino Superior' })
+  def self.initial_filter(job)
+    # current_job = Job.find(43)
+    joins(:experiences, :degrees).where(degrees: { level: job.education_requirement })
+    # joins(:experiences, :degrees).where(degrees: { level: 'Ensino Superior' })
   end
 
   geocoded_by :city

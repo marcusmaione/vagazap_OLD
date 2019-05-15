@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :edit, :update, :destroy, :all_candidates, :candidates]
+  before_action :set_job, only: [:show, :edit, :update, :destroy, :candidates]
   skip_before_action :authenticate_user!, only: [:show]
 
   def show
@@ -50,7 +50,8 @@ class JobsController < ApplicationController
   end
 
   def candidates
-    @filtered_candidates = User.initial_filter
+    job = Job.find(params[:id])
+    @filtered_candidates = User.initial_filter(job)
     candidates_hash = {}
     match_potential = 0
     @filtered_candidates.each do |candidate|
