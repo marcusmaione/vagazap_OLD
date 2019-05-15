@@ -16,10 +16,10 @@
           <p>Benefícios: <%= job.benefit %></p>
           <p>Descrição: <%= job.description %></p>
 
-          <div class="edit-box">
-          <!-- <div class="edit-create-box"> -->
+          <!-- <div class="edit-box"> -->
+          <div class="edit-create-box">
             <!-- comment the div above and the button below, and uncomment the div edit box before git add -->
-            <%#= link_to "Candidatos", job_candidates_path(@company, job), class: "btn btn-sm btn-candidates" %>
+            <%= link_to "Candidatos", job_candidates_path(@company, job), class: "btn btn-sm btn-candidates" %>
             <%= link_to "Editar", edit_company_job_path(@company, job), class: "edit-remove" %>
           </div>
 
