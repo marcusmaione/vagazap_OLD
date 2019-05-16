@@ -34,8 +34,6 @@
                     :label => "CPF:" %>
         <%= f.input :avatar, :label => "Incluir uma foto de perfil:" %>
         <%= f.input :avatar_cache, as: :hidden %>
-
-      <% if @user.first_name != nil %>
         <%= f.input :password,
                     hint: "Deixe em branco se não quiser alterar",
                     required: false,
@@ -46,8 +44,6 @@
                     required: false,
                     :label => "Confirmar nova senha:",
                     input_html: { autocomplete: "new-password" } %>
-      <% end %>
-
         <%= f.input :current_password,
                     hint: "Senha atual para confirmar as alterações",
                     required: true,

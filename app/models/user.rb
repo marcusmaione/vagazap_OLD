@@ -19,13 +19,13 @@ class User < ApplicationRecord
                     presence: true
   validates :cpf, format: { with: /[0-9]{11}/, message: "apenas números" }, presence: true, uniqueness: true
 
-  def city
-    if address.nil? || address == ""
-      # 'Rio de Janeiro, Rio de Janeiro, Brazil'
-    else
-      address.split(', ')[1] + ', ' + address.split(', ')[2] + ', ' + address.split(', ')[3]
-    end
-  end
+  # def city
+  #   if address.nil? || address == ""
+  #     # 'Rio de Janeiro, Rio de Janeiro, Brazil'
+  #   else
+  #     address.split(', ')[1] + ', ' + address.split(', ')[2] + ', ' + address.split(', ')[3]
+  #   end
+  # end
 
   def name_incomplete?
     first_name.nil? || first_name == ''
@@ -56,10 +56,10 @@ class User < ApplicationRecord
     joins(:experiences).where(experiences: { title: job.title })
   end
 
-  geocoded_by :city
-  after_validation :geocode, if: :will_save_change_to_address?
-  # geocoded_by :address
+  # geocoded_by :city
   # after_validation :geocode, if: :will_save_change_to_address?
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice('provider', 'uid')
