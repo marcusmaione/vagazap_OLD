@@ -9,7 +9,8 @@
         <% if candidate[1] <= 0 %>
           <div class="degree-box">
             <p>Nome: <%= candidate[0].first_name %> <%= candidate[0].last_name %> </p>
-            <p>Nome: <%= candidate[0].degrees[0].level %> <%= candidate[0].experiences[0].title %> </p>
+            <p>Experiência como <%= candidate[0].experiences[0].title %>: <%= candidate[0].experiences[0].level %> </p>
+            <p>Diploma: <%= candidate[0].degrees[0].level %> <%= candidate[0].degrees[0].complete %> </p>
           </div>
         <% else %>
         <% end %>
