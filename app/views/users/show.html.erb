@@ -1,0 +1,15 @@
+<div class="container col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div class="profile-box">
+
+    <%= render 'candidate-details' %>
+    <%= render 'candidate-experiences', experiences: @candidate.experiences %>
+    <%= render 'candidate-degrees', degrees: @candidate.degrees %>
+    <%#= render 'candidate-courses', courses: @candidate.courses %>
+
+    <br>
+    <%= link_to "Voltar", :back, class: "btn btn-tertiary btn-sm" %>
+
+  </div>
+</div>
+
+

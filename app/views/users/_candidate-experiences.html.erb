@@ -1,0 +1,13 @@
+<h5>Experiência profissional:</h5>
+
+<div class="degrees-box">
+  <% @candidate.experiences.each do |experience| %>
+    <div class="degree-box">
+      <p>Empresa: <%= experience.company_name %> (<%= experience.company_sector %>)</p>
+      <p>Cargo: <%= experience.title %></p>
+      <p>Área: <%= experience.sector %></p>
+      <p>Descrição: <%= experience.description %></p>
+      <p>Tempo na empresa: <%= experience.level %></p>
+    </div>
+  <% end %>
+</div>
