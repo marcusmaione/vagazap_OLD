@@ -20,7 +20,6 @@
       <% else %>
        <p>Complemento: <%= company.address_complement %></p>
       <% end %>
-      <p><i class="fas fa-city"></i> <%= company.company_city %></p>
       <div class="edit-create-box">
         <%= link_to "Vagas", company_jobs_path(company), class: "btn btn-create-job" %>
         <%= link_to "Editar", edit_company_path(company), class: "edit-remove" %>
