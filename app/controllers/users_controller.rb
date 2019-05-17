@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
 
   def show
+    @candidate = User.find(params[:id])
+    authorize current_user
   end
 
   def new
