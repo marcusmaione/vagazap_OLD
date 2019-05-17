@@ -8,7 +8,7 @@
     <p><i class="fas fa-phone"></i> <%= current_user.phone %></p>
     <p><i class="fas fa-home"></i> <%= current_user.address %></p>
     <!-- The method below helps us getting a latitude and longitude -->
-    <% current_user.city %>
+    <%# current_user.city %>
     <% if current_user.address_complement.nil? %>
     <% else %>
      <p>Complemento: <%= current_user.address_complement %></p>
