@@ -1,61 +1,91 @@
 <div class="container col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
   <div class="form-box">
 
-    <h5>Informações pessoais:</h5>
+    <% if @user.coordinates_incomplete? && @user.profile_incomplete? == false %>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= f.error_notification %>
+    <h5>Não foi possível cadastrar seu endereço. Por favor tente novamente.</h5>
+    <h5>DICA: Digite apenas o nome da rua e o número e escolha a melhor opção sugerida.
+        <br>Caso continue com problemas, tente apenas o nome da rua, sem número.</h5>
+    <h5>Atualizar endereço:</h5>
 
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <p>Aguardando confirmação para: <%= resource.unconfirmed_email %></p>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+
+          <%= f.input :address,
+                      required: true,
+                      hint: "IMPORTANTE: Apenas rua e número.",
+                      :label => "Endereço (IMPORTANTE: apenas rua e número):" %>
+          <%= f.input :address_complement,
+                      hint: "Apto, bloco, casa, etc.",
+                      :label => "Complemento:" %>
+          <%= f.input :current_password,
+                      hint: "Senha atual para confirmar as alterações",
+                      required: true,
+                      :label => "Senha atual:",
+                      input_html: { autocomplete: "current-password" } %>
+
+        <div class="form-actions">
+          <%= f.submit class: 'btn btn-primary', value: "Confirmar" %>
+        </div>
       <% end %>
 
-        <%= f.input :first_name,
-                    autofocus: true,
-                    required: true,
-                    :label => "Nome:" %>
-        <%= f.input :last_name,
-                    required: true,
-                    :label => "Sobrenome:" %>
-        <%= f.input :phone,
-                    required: true,
-                    hint: "Incluir DDD. Exemplo: 21912345678. Inserir apenas os números, sem pontos ou traços.",
-                    :label => "Celular:" %>
-        <%= f.input :address,
-                    required: true,
-                    hint: "IMPORTANTE: Apenas rua e número.",
-                    :label => "Endereço (rua e número):" %>
-        <%= f.input :address_complement,
-                    hint: "Apto, bloco, casa, etc.",
-                    :label => "Complemento:" %>
-        <%= f.input :cpf,
-                    required: true,
-                    hint: "Necessário para evitar cadastro duplicado. Inserir apenas os números, sem pontos ou traços.",
-                    :label => "CPF:" %>
-        <%= f.input :avatar, :label => "Incluir uma foto de perfil:" %>
-        <%= f.input :avatar_cache, as: :hidden %>
-        <%= f.input :password,
-                    hint: "Deixe em branco se não quiser alterar",
-                    required: false,
-                    :label => "Nova senha:",
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    hint: "Deixe em branco se não quiser alterar",
-                    required: false,
-                    :label => "Confirmar nova senha:",
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :current_password,
-                    hint: "Senha atual para confirmar as alterações",
-                    required: true,
-                    :label => "Senha atual:",
-                    input_html: { autocomplete: "current-password" } %>
+    <% else %>
 
-      <div class="form-actions">
-        <%= f.submit class: 'btn btn-primary', value: "Confirmar" %>
-      </div>
+    <h5>Informações pessoais:</h5>
+
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+
+          <%= f.input :first_name,
+                      autofocus: true,
+                      required: true,
+                      :label => "Nome:" %>
+          <%= f.input :last_name,
+                      required: true,
+                      :label => "Sobrenome:" %>
+          <%= f.input :phone,
+                      required: true,
+                      hint: "Incluir DDD. Exemplo: 21912345678. Inserir apenas os números, sem pontos ou traços.",
+                      :label => "Celular:" %>
+          <%= f.input :address,
+                      required: true,
+                      hint: "IMPORTANTE: Apenas rua e número.",
+                      :label => "Endereço (rua e número):" %>
+          <%= f.input :address_complement,
+                      hint: "Apto, bloco, casa, etc.",
+                      :label => "Complemento:" %>
+          <%= f.input :cpf,
+                      required: true,
+                      hint: "Necessário para evitar cadastro duplicado. Inserir apenas os números, sem pontos ou traços.",
+                      :label => "CPF:" %>
+          <%= f.input :avatar, :label => "Incluir uma foto de perfil:" %>
+          <%= f.input :avatar_cache, as: :hidden %>
+          <%= f.input :password,
+                      hint: "Deixe em branco se não quiser alterar",
+                      required: false,
+                      :label => "Nova senha:",
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      hint: "Deixe em branco se não quiser alterar",
+                      required: false,
+                      :label => "Confirmar nova senha:",
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :current_password,
+                      hint: "Senha atual para confirmar as alterações",
+                      required: true,
+                      :label => "Senha atual:",
+                      input_html: { autocomplete: "current-password" } %>
+
+        <div class="form-actions">
+          <%= f.submit class: 'btn btn-primary', value: "Confirmar" %>
+        </div>
+      <% end %>
+
     <% end %>
+
     <br>
-    <% if @user.first_name != nil %>
+    <% if @user.coordinates_incomplete? %>
+      <% else %>
       <%= link_to "Voltar", profile_path, class: "btn btn-tertiary btn-sm" %>
       <br><br><br>
       <%= link_to "Cancelar minha conta", registration_path(resource_name),
