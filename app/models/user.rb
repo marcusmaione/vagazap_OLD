@@ -43,12 +43,12 @@ class User < ApplicationRecord
     phone.nil? || phone == ''
   end
 
-  def coordinates_incomplete?
-    latitude.nil?
+  def profile_incomplete?
+    name_incomplete? || address_incomplete? || cpf_incomplete? || phone_incomplete?
   end
 
-  def profile_incomplete?
-    name_incomplete? || address_incomplete? || cpf_incomplete? || phone_incomplete? || coordinates_incomplete?
+  def coordinates_incomplete?
+    latitude.nil? || latitude == ''
   end
 
   def self.initial_filter(job)
