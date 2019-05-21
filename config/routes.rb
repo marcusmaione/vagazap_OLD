@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :experiences
   resources :courses
   resources :companies do
-    resources :jobs
+    resources :jobs do
+      resources :favorites
+    end
   end
 
   get '/companies/:company_id/jobs/:id/candidates', to: 'jobs#candidates', :as => :job_candidates
