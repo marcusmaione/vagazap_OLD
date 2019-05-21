@@ -10,7 +10,8 @@
           <div class="degree-box">
             <p>Nome: <%= candidate[0].first_name %> <%= candidate[0].last_name %> </p>
             <p>Experiência como <%= candidate[0].experiences[0].title %>: <%= candidate[0].experiences[0].level %> </p>
-            <p>Diploma: <%= candidate[0].degrees[0].level %> <%= candidate[0].degrees[0].complete %> </p>
+            <p>Diploma: <%= candidate[0].degrees[0].level %> </p>
+            <%#= candidate[0].degrees[0].complete %>
             <%= link_to "Perfil completo", user_path(candidate[0].id), class: "btn btn-secondary btn-sm" %>
             <%#= link_to "Gostei!", new_company_job_favorite_path(@job.company_id, @job), class: "btn btn-primary" %>
             <%#= link_to "Gostei!", company_job_favorites_path(@job.company_id, @job), method: :post, class: "btn btn-primary" %>
