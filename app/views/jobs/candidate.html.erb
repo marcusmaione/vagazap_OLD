@@ -4,8 +4,12 @@
     <%= render 'candidate-details' %>
     <%= render 'candidate-experiences', experiences: @candidate.experiences %>
     <%= render 'candidate-degrees', degrees: @candidate.degrees %>
+    <%= render 'candidate-courses', courses: @candidate.courses %>
     <br>
-    <%= link_to "Voltar", :back, class: "btn btn-tertiary btn-sm" %>
+    <div class="edit-create-box">
+      <%#= link_to "Gostei!", company_job_favorites_path(@job.company_id, @job), method: :post, class: "btn btn-primary" %>
+      <%= link_to "Voltar", :back, class: "btn btn-tertiary btn-sm" %>
+    </div>
 
   </div>
 </div>
