@@ -1,0 +1,14 @@
+<h5><%= @candidate.first_name %> <%= @candidate.last_name %></h5>
+
+<div class="degrees-box">
+  <div class="degree-box">
+    <p>CPF: <%= @candidate.cpf %></p>
+    <p><i class="fas fa-envelope"></i> <%= @candidate.email %></p>
+    <p><i class="fas fa-phone"></i> <%= @candidate.phone %></p>
+    <p><i class="fas fa-home"></i> <%= @candidate.address %></p>
+    <% if @candidate.address_complement.nil? %>
+    <% else %>
+     <p>Complemento: <%= @candidate.address_complement %></p>
+    <% end %>
+  </div>
+</div>

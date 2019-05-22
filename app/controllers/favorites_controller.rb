@@ -17,7 +17,8 @@ class FavoritesController < ApplicationController
     @job = Job.find(params[:job_id])
     @favorite.job = @job
 
-    @favorite.user = current_user
+    # @favorite.user = current_user
+    @favorite.user = User.find(params[:user_id])
 
     authorize @favorite
 

@@ -28,4 +28,8 @@ class UserPolicy < ApplicationPolicy
   def destroy?
     @user == user
   end
+
+  def candidate?
+    return true
+  end
 end
