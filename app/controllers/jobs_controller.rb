@@ -102,7 +102,7 @@ class JobsController < ApplicationController
   end
 
   def candidate
-    @candidate = User.find(params[:id])
+    @candidate = User.find(params[:user_id])
     authorize current_user
   end
 
