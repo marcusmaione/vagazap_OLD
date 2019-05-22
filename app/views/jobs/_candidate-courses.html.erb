@@ -1,0 +1,15 @@
+<h5>Cursos:</h5>
+
+<div class="degrees-box">
+  <% @candidate.courses.each do |course| %>
+    <div class="degree-box">
+      <p><%= course.category %>: <%= course.school_name %></p>
+      <p>Descrição: <%=  course.description %></p>
+      <% if course.complete == "1" %>
+        <p>Completo</p>
+      <% else %>
+        <p>Incompleto</p>
+      <% end %>
+    </div>
+  <% end %>
+</div>

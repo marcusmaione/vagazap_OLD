@@ -1,0 +1,20 @@
+<h5>Formação educacional:</h5>
+
+<div class="degrees-box">
+  <% @candidate.degrees.each do |degree| %>
+    <div class="degree-box">
+      <p><%= degree.level %>
+        <% if degree.complete == "1" %>
+          Completo
+        <% else %>
+          Incompleto
+        <% end %>
+      </p>
+      <p>Instituição: <%= degree.school_name %></p>
+        <% if degree.field.empty? %>
+        <% else %>
+         <p>Curso: <%= degree.field %></p>
+        <% end %>
+    </div>
+  <% end %>
+</div>

@@ -101,6 +101,11 @@ class JobsController < ApplicationController
     @all_candidates = candidates_hash.sort_by { |key, value| value }
   end
 
+  def candidate
+    @candidate = User.find(params[:id])
+    authorize current_user
+  end
+
   private
 
   def set_job
