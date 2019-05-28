@@ -56,6 +56,10 @@ class User < ApplicationRecord
     joins(:experiences).where(experiences: { title: job.title })
   end
 
+  def self.favorite_initial_filter(job)
+    joins(:favorites).where(favorites: { job_id: job.id })
+  end
+
   # geocoded_by :city
   # after_validation :geocode, if: :will_save_change_to_address?
   geocoded_by :address

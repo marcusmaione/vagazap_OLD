@@ -14,20 +14,11 @@ class FavoritesController < ApplicationController
   def create
     @favorite = Favorite.new()
 
-    # @company = Company.find(params[:company_id])
-    # @favorite.company = @company
-
     @job = Job.find(params[:id])
     @favorite.job = @job
 
-    # @favorite.user = candidate
-
     @favorite_user = User.find(params[:user_id])
     @favorite.user = @favorite_user
-    # authorize current_user
-
-    # @favorite.user = current_user
-    # @favorite.user = User.find(params[:user_id])
 
     authorize @favorite
 
