@@ -14,18 +14,27 @@ class FavoritesController < ApplicationController
   def create
     @favorite = Favorite.new()
 
-    @job = Job.find(params[:job_id])
+    # @company = Company.find(params[:company_id])
+    # @favorite.company = @company
+
+    @job = Job.find(params[:id])
     @favorite.job = @job
 
+    # @favorite.user = candidate
+
+    @favorite_user = User.find(params[:user_id])
+    @favorite.user = @favorite_user
+    # authorize current_user
+
     # @favorite.user = current_user
-    @favorite.user = User.find(params[:user_id])
+    # @favorite.user = User.find(params[:user_id])
 
     authorize @favorite
 
     if @favorite.save
-      redirect_to profile_path
+      redirect_to root_path
     else
-      redirect_to company_path(@job.company)
+      redirect_to profile_path
     end
   end
 
@@ -47,7 +56,7 @@ class FavoritesController < ApplicationController
     authorize @favorite
   end
 
-  # def favorite_params
-  #   params.require(:favorite).permit()
-  # end
+  def favorite_params
+    params.require(:favorite).permit(:id, :user_id)
+  end
 end
