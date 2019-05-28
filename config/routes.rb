@@ -19,4 +19,6 @@ Rails.application.routes.draw do
 
   get '/companies/:company_id/jobs/:id/candidates', to: 'jobs#candidates', :as => :job_candidates
   get '/companies/:company_id/jobs/:id/candidate/:user_id', to: 'jobs#candidate', :as => :job_candidate
+
+  get '/companies/:company_id/jobs/:id/favorites', to: 'jobs#favorites', :as => :job_favorites
 end

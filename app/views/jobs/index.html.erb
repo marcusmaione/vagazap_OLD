@@ -23,6 +23,10 @@
             <%= link_to "Editar", edit_company_job_path(@company, job), class: "edit-remove" %>
           </div>
 
+          <div class="edit-create-box">
+            <%= link_to "Favoritos", job_favorites_path(@company, job), class: "btn btn-sm btn-candidates" %>
+          </div>
+
         </div>
       <% end %>
     </div>

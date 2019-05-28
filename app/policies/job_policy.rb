@@ -32,4 +32,8 @@ class JobPolicy < ApplicationPolicy
   def candidates?
     return true
   end
+
+  def favorites?
+    return true
+  end
 end

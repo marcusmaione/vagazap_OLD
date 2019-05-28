@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :edit, :update, :destroy, :candidates]
+  before_action :set_job, only: [:show, :edit, :update, :destroy, :candidates, :favorites]
   skip_before_action :authenticate_user!, only: [:show]
 
   def show
@@ -104,6 +104,11 @@ class JobsController < ApplicationController
   def candidate
     @candidate = User.find(params[:user_id])
     authorize current_user
+  end
+
+  def favorites
+    job = Job.find(params[:id])
+    @favorite_candidates = User.favorite_initial_filter(job)
   end
 
   private

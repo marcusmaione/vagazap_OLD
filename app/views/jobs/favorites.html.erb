@@ -1,0 +1,25 @@
+<div class="container col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div class="profile-box">
+
+    <h5>Favoritos para <%= @job.title %>:</h5>
+
+    <div class="degrees-box">
+      <% @favorite_candidates.each do |candidate| %>
+
+        <div class="degree-box">
+          <p>Nome: <%= candidate.first_name %> <%= candidate.last_name %> </p>
+          <p>Experiência como <%#= candidate.experiences.title %>: <%#= candidate.experiences.level %> </p>
+          <p>Diploma: <%#= candidate.degrees.level %> </p>
+          <div class="complete-profile-box">
+            <%= link_to "Perfil completo", job_candidate_path(@job.company_id, @job, candidate.id), class: "btn btn-secondary btn-sm" %>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+
+    <br>
+    <%= link_to "Voltar", company_jobs_path, class: "btn btn-tertiary btn-sm" %>
+
+  </div>
+</div>
