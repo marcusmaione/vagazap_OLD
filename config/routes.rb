@@ -12,9 +12,10 @@ Rails.application.routes.draw do
   resources :courses
   resources :companies do
     resources :jobs do
-      resources :favorites
+      # resources :favorites
     end
   end
+  post '/companies/:company_id/jobs/:id/candidate/:user_id', to: 'favorites#create', :as => :favorite_create
 
   get '/companies/:company_id/jobs/:id/candidates', to: 'jobs#candidates', :as => :job_candidates
   get '/companies/:company_id/jobs/:id/candidate/:user_id', to: 'jobs#candidate', :as => :job_candidate

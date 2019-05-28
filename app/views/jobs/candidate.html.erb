@@ -2,12 +2,29 @@
   <div class="profile-box">
 
     <%= render 'candidate-details' %>
-    <%= render 'candidate-experiences', experiences: @candidate.experiences %>
-    <%= render 'candidate-degrees', degrees: @candidate.degrees %>
-    <%= render 'candidate-courses', courses: @candidate.courses %>
-    <br>
-    <div class="edit-create-box">
+
+    <% if @candidate.experiences.count >= 1 %>
+      <%= render 'candidate-experiences', experiences: @candidate.experiences %>
+    <% else %>
+    <% end %>
+
+    <% if @candidate.degrees.count >= 1 %>
+      <%= render 'candidate-degrees', degrees: @candidate.degrees %>
+    <% else %>
+    <% end %>
+
+    <% if @candidate.courses.count >= 1 %>
+      <%= render 'candidate-courses', courses: @candidate.courses %>
+    <% else %>
+    <% end %>
+
+    <div class="favorite-back-box">
+      <%#= link_to "Gostei!", profile_path, class: "btn btn-primary btn-sm" %>
+      <%= link_to "Gostei!", favorite_create_path,
+            method: :post, class: "btn btn-primary btn-sm" %>
+      <%#= link_to "Gostei!", company_job_favorites_path(@job.company_id, @job), method: :post, class: "btn btn-primary btn-sm" %>
       <%#= link_to "Gostei!", company_job_favorites_path(@job.company_id, @job), method: :post, class: "btn btn-primary" %>
+      <%#= link_to "Gostei!", company_job_favorites_path, method: :post, class: "btn btn-primary" %>
       <%= link_to "Voltar", :back, class: "btn btn-tertiary btn-sm" %>
     </div>
 
